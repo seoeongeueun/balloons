@@ -12,4 +12,75 @@ main {
   height: 100vh;
   background-image: linear-gradient(#00EBFF, #00BFFC);
   margin: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.balloon {
+  position: absolute;
+  left: 70px;
+  top: 150px;
+  -webkit-animation: shake-bottom 2s linear infinite both;
+          animation: shake-bottom 2s linear infinite both;
+}
+
+.roundShape {
+  width: 120px;
+  height: 130px;
+  background: radial-gradient(#ffaebe 15%, #FF84AA, #FF84AA);
+  border-radius: 60% / 65% 70% 50% 50%;
+  margin-top: 10px;
+  position: relative;
+  border: 5px solid #FF84AA;
+  margin-top: 30px;
+  box-sizing: border-box;
+  box-shadow: -7px -5.5px 0px -5.5px rgba(255, 255, 255, 1) inset;
+  outline: 2px solid black;
+
+}
+
+.balloonTip {
+  width: 15px;
+  height: 15px;
+  background-color: #FF84AA;
+  border-radius: 5px;
+  border: 2px solid black;
+  position: relative;
+  left: 45px;
+  top: -17px;
+  z-index: -1;
+}
+
+.balloonString {
+  position: relative;
+  height: 50px;
+  background-color: black;
+  width: 2px;
+}
+
+/* list of animations */
+@-webkit-keyframes shake-bottom {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation));
+            transform: rotate(var(--initial-rotation));
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 6deg));
+            transform: rotate(calc(var(--initial-rotation) - 6deg));
+  }
+}
+
+@keyframes shake-bottom {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation));
+            transform: rotate(var(--initial-rotation));
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 6deg));
+            transform: rotate(calc(var(--initial-rotation) - 6deg));
+  }
 }
