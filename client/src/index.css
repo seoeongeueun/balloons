@@ -18,7 +18,7 @@ html {
 main {
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(#00EBFF, #00BFFC);
+  background-image: linear-gradient(#00EBFF, #00CBFB);
   margin: 0;
   position: absolute;
   z-index: -1;
@@ -26,10 +26,71 @@ main {
 }
 
 .flag {
-  width: 50rem;
+  width: 49rem;
   position: absolute;
-  top: 50vh;
+  top: 52vh;
   left: 7vw;
+}
+
+.cloud {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.cloudHalf {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.cloudShape1 {
+  background-color: white;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  margin-right: -25px;
+  margin-bottom: 6px;
+  box-shadow: 5px 12px 0px 0px rgb(217,217,218);
+}
+
+.cloudShape1:last-child {
+  margin-right: 0;
+}
+
+.cloudShape2 {
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin-right: -15px;
+  margin-bottom: -5px;
+  box-shadow: 5px 12px 0px 0px rgb(217,217,218);
+}
+
+.cloudShape3 {
+  background-color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  margin-right: -20px;
+}
+
+.cloudShape3:last-child {
+  margin-right: 0;
+}
+
+.cloudShape4 {
+  background-color: white;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  margin-right: -30px;
+  margin-bottom: 20px;
+  box-shadow: 0px 12px 0px 0px rgb(217,217,218);
 }
 
 .balloon {
