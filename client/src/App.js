@@ -2,40 +2,172 @@ import Flag from "./images/flag.png";
 import Mansion from "./images/mansion.png";
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
+  const positions = [
+    {
+      id: 1,
+      top: "90vh",
+      left: "30vw",
+      scale: "1.5",
+      rotate: "150deg",
+      color: "#FF84AA",
+      shape: "round",
+      more: false,
+      tip: false,
+    },
+    {
+      id: 2,
+      top: "50vh",
+      left: "17vw",
+      scale: "0.9",
+      rotate: "160deg",
+      color: "#FF84AA",
+      shape: "round",
+      more: false,
+      tip: false,
+    },
+    {
+      id: 3,
+      top: "60vh",
+      left: "68vw",
+      scale: "18",
+      rotate: "33deg",
+      color: "#F31C12",
+      shape: "heart",
+      more: false,
+      tip: false,
+    },
+    {
+      id: 4,
+      top: "33vh",
+      left: "2vw",
+      scale: "0.9",
+      rotate: "20deg",
+      color: "brown",
+      shape: "bear",
+      more: false,
+      tip: false,
+    },
+    {
+      id: 5,
+      top: "78vh",
+      left: "50vw",
+      scale: "1",
+      rotate: "135deg",
+      color: "#FF84AA",
+      shape: "round",
+      more: true,
+      tip: true,
+    },
+    {
+      id: 6,
+      top: "82vh",
+      left: "53vw",
+      scale: "1.2",
+      rotate: "160deg",
+      color: "#FF84AA",
+      shape: "round",
+      more: false,
+      tip: true,
+    },
+  ];
   return (
     <main>
       <img src={Mansion} alt="mansion" className="mansion" />
-      <div
-        className="balloonLeft"
-        style={{
-          "--initial-rotation": "150deg",
-          top: "90vh",
-          left: "30vw",
-          "--initial-scale": "1.5",
-        }}
-      >
-        <div className="roundShape">
-          <div className="balloonTip" />
-        </div>
-      </div>
-
-      <div
-        className="heartBalloon"
-        style={{
-          "--initial-scale": "18",
-          top: "60vh",
-          left: "68vw",
-          "--initial-rotation": "33deg",
-        }}
-      >
-        <div className="heartBorder" style={{ transform: "scale(1.02)" }} />
-        <div className="heart">
-          <div style={{ zIndex: 1 }} className="heartBalloonText">
-            <span>~70%</span>
-            <span>SALE</span>
-          </div>
-        </div>
-      </div>
+      {positions.map((balloon, index) => (
+        <>
+          {balloon.shape === "round" ? (
+            <div
+              key={index + 1}
+              className="balloonLeft"
+              style={{
+                "--initial-rotation": balloon.rotate,
+                top: balloon.top,
+                left: balloon.left,
+                "--initial-scale": balloon.scale,
+                color: balloon.color,
+                animation: balloon.more
+                  ? "shake-bottom-more 2s ease-in-out infinite both"
+                  : balloon.tip &&
+                    "shake-bottom-tip 2s ease-in-out infinite both",
+                WebkitAnimation: balloon.more
+                  ? "shake-bottom-more 2s ease-in-out infinite both"
+                  : balloon.tip &&
+                    "shake-bottom-tip 2s ease-in-out infinite both",
+              }}
+            >
+              <div className="roundShape">
+                <div className="balloonTip" />
+                {balloon.tip && <div className="balloonString" />}
+              </div>
+            </div>
+          ) : balloon.shape === "bear" ? (
+            <div
+              key={index + 1}
+              className="bear"
+              style={{
+                "--initial-rotation": balloon.rotate,
+                top: balloon.top,
+                left: balloon.left,
+                "--initial-scale": balloon.scale,
+              }}
+            >
+              <div className="bearEars">
+                <div
+                  className="ear"
+                  style={{
+                    transform: "rotate(-40deg)",
+                    boxShadow: "-3px 6px 4px -2px #FBCD83 inset",
+                  }}
+                >
+                  <div className="earShadow" />
+                </div>
+                <div className="ear" style={{ transform: "rotate(40deg)" }}>
+                  <div className="earShadow" />
+                </div>
+              </div>
+              <div className="bearFace">
+                <div className="bearEyes">
+                  <div className="eye" />
+                  <div className="eye" />
+                </div>
+                <div className="noseAndMouth">
+                  <div className="nose" />
+                  <div className="mouthLine" />
+                  <div className="smile">
+                    <div className="smileHalf" />
+                    <div className="smileHalf" />
+                  </div>
+                  <div className="mouthOpen" />
+                </div>
+                <div className="bearTip" />
+              </div>
+            </div>
+          ) : balloon.shape === "heart" ? (
+            <div
+              key={index + 1}
+              className="heartBalloon"
+              style={{
+                "--initial-scale": balloon.scale,
+                top: balloon.top,
+                left: balloon.left,
+                "--initial-rotation": balloon.rotate,
+              }}
+            >
+              <div
+                className="heartBorder"
+                style={{ transform: "scale(1.02)" }}
+              />
+              <div className="heart">
+                <div style={{ zIndex: 1 }} className="heartBalloonText">
+                  <span>~70%</span>
+                  <span>SALE</span>
+                </div>
+              </div>
+            </div>
+          ) : null}
+        </>
+      ))}
       <img src={Flag} alt="flag" className="flag" />
       <div
         className="cloud"
@@ -64,8 +196,8 @@ function App() {
         className="cloud"
         style={{
           top: "34vh",
-          left: "10vw",
-          transform: "scale(0.4) rotate(5deg)",
+          left: "13vw",
+          transform: "scale(0.5) rotate(5deg)",
           filter: "blur(5px)",
         }}
       >
@@ -225,46 +357,6 @@ function App() {
           <div className="cloudShape1" />
           <div className="cloudShape1" />
           <div className="cloudShape1" style={{ marginBottom: "10px" }} />
-        </div>
-      </div>
-      <div
-        className="bear"
-        style={{
-          "--initial-rotation": "20deg",
-          top: "30vh",
-          left: "2vw",
-          "--initial-scale": "0.9",
-        }}
-      >
-        <div className="bearEars">
-          <div
-            className="ear"
-            style={{
-              transform: "rotate(-40deg)",
-              boxShadow: "-3px 6px 4px -2px #FBCD83 inset",
-            }}
-          >
-            <div className="earShadow" />
-          </div>
-          <div className="ear" style={{ transform: "rotate(40deg)" }}>
-            <div className="earShadow" />
-          </div>
-        </div>
-        <div className="bearFace">
-          <div className="bearEyes">
-            <div className="eye" />
-            <div className="eye" />
-          </div>
-          <div className="noseAndMouth">
-            <div className="nose" />
-            <div className="mouthLine" />
-            <div className="smile">
-              <div className="smileHalf" />
-              <div className="smileHalf" />
-            </div>
-            <div className="mouthOpen" />
-          </div>
-          <div className="bearTip" />
         </div>
       </div>
     </main>

@@ -107,8 +107,8 @@ main {
   width: 18.5rem;
   position: absolute;
   cursor: pointer;
-  -webkit-animation: shake-bottom-right 2s linear infinite both;
-          animation: shake-bottom-right 2s linear infinite both;
+  -webkit-animation: shake-bottom-right 2s ease-in-out infinite both;
+          animation: shake-bottom-right 2s ease-in-out infinite both;
 }
 
 .bearEars {
@@ -236,8 +236,8 @@ main {
   position: absolute;
   left: 70px;
   top: 150px;
-  -webkit-animation: shake-bottom 2s linear infinite both;
-          animation: shake-bottom 2s linear infinite both;
+  -webkit-animation: shake-bottom 2s ease-in-out infinite both;
+          animation: shake-bottom 2s ease-in-out infinite both;
 }
 
 .roundShape {
@@ -269,9 +269,14 @@ main {
 
 .balloonString {
   position: relative;
-  height: 50px;
-  background-color: black;
-  width: 2px;
+  top: -250px;
+  left: 62px;
+  height: 300px;
+  border-left: 2px solid black;
+  border-radius: 50%;
+  width: 60px;
+  transform: rotate(10deg);
+  z-index: -2;
 }
 
 .heartBalloon {
@@ -302,7 +307,7 @@ main {
 .heart{
 	width: 24px;
 	height: 24px;
-	background: radial-gradient(#ff8d78 10%, #F31C12, #F31C12);
+	background: radial-gradient(#F67052 10%, #F31C12, #F31C12);
 	clip-path: path("M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z");
   outline: 2px solid black;
   display: flex;
@@ -335,16 +340,69 @@ main {
 }
 
 /* list of animations */
-@-webkit-keyframes shake-bottom {
+@-webkit-keyframes shake-bottom-more {
   0%, 100% {
-    -webkit-transform: rotate(var(--initial-rotation));
-            transform: rotate(var(--initial-rotation));
-    -webkit-transform-origin: 50% 0%;
-            transform-origin: 50% 0%;
+    -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+            transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+    -webkit-transform-origin: -0% -100%;
+            transform-origin: -0% -100%;
   }
   50% {
-    -webkit-transform: rotate(calc(var(--initial-rotation) - 6deg));
-            transform: rotate(calc(var(--initial-rotation) - 6deg));
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale));
+            transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale));
+  }
+}
+
+@keyframes shake-bottom-more {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+            transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+    -webkit-transform-origin: -0% -100%;
+            transform-origin: -0% -100%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale)) translateY(10px);
+            transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale)) translateY(10px);
+  }
+}
+
+/* list of animations */
+@-webkit-keyframes shake-bottom-more {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+            transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+    -webkit-transform-origin: -0% -100%;
+            transform-origin: -0% -100%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale)) translateY(10px);
+            transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale)) translateY(10px);
+  }
+}
+
+@keyframes shake-bottom-tip {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+            transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+    -webkit-transform-origin: -0% -100%;
+            transform-origin: -0% -100%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale));
+            transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale));
+  }
+}
+
+@-webkit-keyframes shake-bottom-tip {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+            transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+    -webkit-transform-origin: -0% -100%;
+            transform-origin: -0% -100%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale));
+            transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale));
   }
 }
 
@@ -356,8 +414,8 @@ main {
             transform-origin: 50% 0%;
   }
   50% {
-    -webkit-transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale));
-            transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale));
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale));
+            transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale));
   }
 }
 
