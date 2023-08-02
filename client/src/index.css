@@ -101,7 +101,138 @@ main {
   box-shadow: 0px 12px 0px 0px rgb(217,217,218);
 }
 
+.bear {
+  display: flex;
+  flex-direction: column;
+  width: 18.5rem;
+  position: absolute;
+  cursor: pointer;
+  -webkit-animation: shake-bottom-right 2s linear infinite both;
+          animation: shake-bottom-right 2s linear infinite both;
+}
+
+.bearEars {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: -2.8rem;
+}
+
+.ear {
+  width: 60px;
+  height: 35px;
+  border-radius: 30px 30px 0px 0;
+  background-color: #F87513;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.earShadow {
+  position: relative;
+  width: 30px;
+  height: 15px;
+  background-color: #A3280B;
+  border-radius: 15px 15px 0 0;
+  top: 11px;
+  left: 15px;
+  
+}
+
+.bearFace {
+  width: 15rem;
+  height: 13rem;
+  border-radius: 100% 100% 80% 80%;
+  background-color: #F87513;
+  border: 6px solid #F87513;
+  margin-left: 1.7rem;
+  box-sizing: border-box;
+  box-shadow: 4px 10px 2px -8px #FBCD83 inset;
+  outline: 2px solid black;
+}
+
+.bearEyes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 6rem;
+  position: relative;
+  top: 5rem;
+  left: 3.9rem;
+}
+
+.eye {
+  width: 15px;
+  height: 15px;
+  background-color: #2F0E13;
+  border-radius: 100%;
+  z-index: 2;
+}
+
+.noseAndMouth {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 5rem;
+  left: 0rem;
+  align-items: center;
+}
+
+.nose {
+  width: 20px;
+  height: 10px;
+  background-color: #2F0E13;
+  z-index: 2;
+  border-radius: 50%;
+}
+
+.mouthLine {
+  width: 3px;
+  height: 4px;
+  background-color: #2F0E13;
+  z-index: 2;
+}
+
+.smile {
+  width: 3.4rem;
+  display: flex;
+  flex-direction: row;
+  transform: scaleY(-1);
+  margin-top: -1px;
+}
+
+.smileHalf {
+  width: 1.7rem;
+  height: 5px;
+  background-color: transparent;
+  border: 3px solid #2F0E13;
+  border-bottom: transparent;
+  border-radius: 5px 5px 0 0;
+  z-index: 2;
+}
+
+.mouthOpen {
+  background-color: #2F0E13;
+  width: 18px;
+  height: 12px;
+  border-radius: 100%;
+  z-index: 2;
+  margin-top: -6px;
+}
+
+.bearTip {
+  width: 10px;
+  height: 13px;
+  background-color: #F87513;
+  border: 2px solid black;
+  border-radius: 5px;
+  position: relative;
+  top: 7.8rem;
+  left: 6.1rem;
+  z-index: -1;
+}
 .balloon {
+  cursor: pointer;
   position: absolute;
   left: 70px;
   top: 150px;
@@ -144,6 +275,7 @@ main {
 }
 
 .heartBalloon {
+  cursor: pointer;
   position: absolute;
   -webkit-animation: enlarge 2s ease-in-out infinite;
   animation: enlarge 2s ease-in-out infinite;
@@ -248,5 +380,31 @@ main {
   50% {
     -webkit-transform: scale(calc(var(--initial-scale) + 1)) rotate(var(--initial-rotation));
             transform: scale(calc(var(--initial-scale) + 1)) rotate(var(--initial-rotation));
+  }
+}
+
+@-webkit-keyframes shake-bottom-right {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation));
+            transform: rotate(var(--initial-rotation));
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 6deg));
+            transform: rotate(calc(var(--initial-rotation) - 6deg));
+  }
+}
+
+@keyframes shake-bottom-right {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+            transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale));
+            transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale));
   }
 }

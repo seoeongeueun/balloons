@@ -227,6 +227,46 @@ function App() {
           <div className="cloudShape1" style={{ marginBottom: "10px" }} />
         </div>
       </div>
+      <div
+        className="bear"
+        style={{
+          "--initial-rotation": "20deg",
+          top: "30vh",
+          left: "2vw",
+          "--initial-scale": "0.9",
+        }}
+      >
+        <div className="bearEars">
+          <div
+            className="ear"
+            style={{
+              transform: "rotate(-40deg)",
+              boxShadow: "-3px 6px 4px -2px #FBCD83 inset",
+            }}
+          >
+            <div className="earShadow" />
+          </div>
+          <div className="ear" style={{ transform: "rotate(40deg)" }}>
+            <div className="earShadow" />
+          </div>
+        </div>
+        <div className="bearFace">
+          <div className="bearEyes">
+            <div className="eye" />
+            <div className="eye" />
+          </div>
+          <div className="noseAndMouth">
+            <div className="nose" />
+            <div className="mouthLine" />
+            <div className="smile">
+              <div className="smileHalf" />
+              <div className="smileHalf" />
+            </div>
+            <div className="mouthOpen" />
+          </div>
+          <div className="bearTip" />
+        </div>
+      </div>
     </main>
   );
 }
