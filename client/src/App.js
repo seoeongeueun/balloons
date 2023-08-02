@@ -61,6 +61,28 @@ function App() {
     },
     {
       id: 6,
+      top: "51vh",
+      left: "40vw",
+      scale: "1",
+      rotate: "145deg",
+      color: "#A7DD2D",
+      shape: "round",
+      more: false,
+      tip: false,
+    },
+    {
+      id: 7,
+      top: "39vh",
+      left: "39vw",
+      scale: "0.8",
+      rotate: "-30deg",
+      color: "#FF84AA",
+      shape: "bear",
+      more: false,
+      tip: true,
+    },
+    {
+      id: 8,
       top: "82vh",
       left: "53vw",
       scale: "1.2",
@@ -85,18 +107,32 @@ function App() {
                 top: balloon.top,
                 left: balloon.left,
                 "--initial-scale": balloon.scale,
-                color: balloon.color,
                 animation: balloon.more
                   ? "shake-bottom-more 2s ease-in-out infinite both"
-                  : balloon.tip &&
-                    "shake-bottom-tip 2s ease-in-out infinite both",
+                  : balloon.tip
+                  ? "shake-bottom-tip 2s ease-in-out infinite both"
+                  : balloon.color === "#A7DD2D" &&
+                    "shake-bottom-noTip 2s linear infinite both",
                 WebkitAnimation: balloon.more
                   ? "shake-bottom-more 2s ease-in-out infinite both"
-                  : balloon.tip &&
-                    "shake-bottom-tip 2s ease-in-out infinite both",
+                  : balloon.tip
+                  ? "shake-bottom-tip 2s ease-in-out infinite both"
+                  : balloon.color === "#A7DD2D" &&
+                    "shake-bottom-noTip 2s linear infinite both",
               }}
             >
-              <div className="roundShape">
+              <div
+                className="roundShape"
+                style={{
+                  background:
+                    balloon.color === "#A7DD2D"
+                      ? "radial-gradient(#FBE519 15%, #A7DD2D, #A7DD2D)"
+                      : balloon.color === "#FF84AA"
+                      ? "radial-gradient(#ffaebe 15%, #FF84AA, #FF84AA)"
+                      : null,
+                  border: `5px solid ${balloon.color}`,
+                }}
+              >
                 <div className="balloonTip" />
                 {balloon.tip && <div className="balloonString" />}
               </div>
@@ -110,6 +146,10 @@ function App() {
                 top: balloon.top,
                 left: balloon.left,
                 "--initial-scale": balloon.scale,
+                animation:
+                  balloon.tip && "shake-bear-tip 2s ease-in-out infinite both",
+                WebkitAnimation:
+                  balloon.tip && "shake-bear-tip 2s ease-in-out infinite both",
               }}
             >
               <div className="bearEars">
@@ -141,6 +181,7 @@ function App() {
                   <div className="mouthOpen" />
                 </div>
                 <div className="bearTip" />
+                {balloon.tip && <div className="bearString" />}
               </div>
             </div>
           ) : balloon.shape === "heart" ? (

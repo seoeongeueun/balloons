@@ -123,9 +123,9 @@ main {
   height: 35px;
   border-radius: 30px 30px 0px 0;
   background-color: #F87513;
-  border-top: 2px solid black;
-  border-right: 2px solid black;
-  border-left: 2px solid black;
+  border-top: 2.5px solid black;
+  border-right: 2.5px solid black;
+  border-left: 2.5px solid black;
 }
 
 .earShadow {
@@ -148,7 +148,7 @@ main {
   margin-left: 1.7rem;
   box-sizing: border-box;
   box-shadow: 4px 10px 2px -8px #FBCD83 inset;
-  outline: 2px solid black;
+  outline: 2.5px solid black;
 }
 
 .bearEyes {
@@ -224,13 +224,26 @@ main {
   width: 10px;
   height: 13px;
   background-color: #F87513;
-  border: 2px solid black;
+  border: 2.5px solid black;
   border-radius: 5px;
   position: relative;
   top: 7.8rem;
   left: 6.1rem;
   z-index: -1;
 }
+
+.bearString {
+  position: relative;
+  top: -0px;
+  left: 8px;
+  height: 300px;
+  border-right: 3px solid black;
+  border-radius: 50%;
+  width: 60px;
+  transform: rotate(3deg);
+  z-index: -2;
+}
+
 .balloonLeft {
   cursor: pointer;
   position: absolute;
@@ -243,11 +256,9 @@ main {
 .roundShape {
   width: 120px;
   height: 130px;
-  background: radial-gradient(#ffaebe 15%, #FF84AA, #FF84AA);
   border-radius: 60% / 65% 70% 50% 50%;
   margin-top: 10px;
   position: relative;
-  border: 5px solid #FF84AA;
   margin-top: 30px;
   box-sizing: border-box;
   box-shadow: -7px -5.5px 0px -5.5px rgba(255, 255, 255, 1) inset;
@@ -361,8 +372,8 @@ main {
             transform-origin: -0% -100%;
   }
   50% {
-    -webkit-transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale)) translateY(10px);
-            transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale)) translateY(10px);
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 10deg)) scale(var(--initial-scale)) translateY(10px) translateX(9px);
+            transform: rotate(calc(var(--initial-rotation) - 10deg)) scale(var(--initial-scale)) translateY(10px) translateX(9px);
   }
 }
 
@@ -375,12 +386,25 @@ main {
             transform-origin: -0% -100%;
   }
   50% {
-    -webkit-transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale)) translateY(10px);
-            transform: rotate(calc(var(--initial-rotation) - 6deg)) scale(var(--initial-scale)) translateY(10px);
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 7deg)) scale(var(--initial-scale)) translateY(13px) translateX(10px);
+            transform: rotate(calc(var(--initial-rotation) - 7deg)) scale(var(--initial-scale)) translateY(13px) translateX(10px);
   }
 }
 
 @keyframes shake-bottom-tip {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+            transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+    -webkit-transform-origin: -0% -100%;
+            transform-origin: -0% -100%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale)) translateY(3px);
+            transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale)) translateY(3px);
+  }
+}
+
+@-webkit-keyframes shake-bottom-tip {
   0%, 100% {
     -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
             transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
@@ -393,12 +417,38 @@ main {
   }
 }
 
-@-webkit-keyframes shake-bottom-tip {
+@keyframes shake-bear-tip {
   0%, 100% {
     -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
             transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
-    -webkit-transform-origin: -0% -100%;
-            transform-origin: -0% -100%;
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale)) translateY(-6px) translateX(-13px);
+            transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale)) translateY(-6px) translateX(-13px);
+  }
+}
+
+@-webkit-keyframes shake-bear-tip {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+            transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale)) translateY(-6px) translateX(-13px);
+            transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale)) translateY(-6px) translateX(-13px);
+  }
+}
+
+@-webkit-keyframes shake-bottom {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+            transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
   }
   50% {
     -webkit-transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale));
@@ -416,6 +466,32 @@ main {
   50% {
     -webkit-transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale));
             transform: rotate(calc(var(--initial-rotation) - 3deg)) scale(var(--initial-scale));
+  }
+}
+
+@-webkit-keyframes shake-bottom-noTip {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+            transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 18deg)) scale(var(--initial-scale)) translateX(-15px);
+            transform: rotate(calc(var(--initial-rotation) - 18deg)) scale(var(--initial-scale)) translateX(-15px);
+  }
+}
+
+@keyframes shake-bottom-noTip {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+            transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) - 18deg)) scale(var(--initial-scale)) translateX(-15px);
+            transform: rotate(calc(var(--initial-rotation) - 18deg)) scale(var(--initial-scale)) translateX(-15px);
   }
 }
 
