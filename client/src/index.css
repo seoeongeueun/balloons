@@ -26,10 +26,18 @@ main {
 }
 
 .flag {
-  width: 49rem;
+  width: 47rem;
   position: absolute;
-  top: 52vh;
-  left: 7vw;
+  top: 49vh;
+  left: 10vw;
+}
+
+.mansion {
+  width: 57rem;
+  position: absolute;
+  bottom: 0;
+  left: 35%;
+  z-index: 5;
 }
 
 .cloud {
@@ -37,7 +45,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  filter: blur(4px);
+  filter: blur(3px);
   z-index: -1;
 }
 

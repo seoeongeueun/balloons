@@ -1,8 +1,10 @@
 import Flag from "./images/flag.png";
+import Mansion from "./images/mansion.png";
 
 function App() {
   return (
     <main>
+      <img src={Mansion} alt="mansion" className="mansion" />
       <div
         className="balloon"
         style={{
@@ -20,13 +22,13 @@ function App() {
       <div
         className="heartBalloon"
         style={{
-          "--initial-scale": "15",
-          top: "65vh",
-          left: "65vw",
+          "--initial-scale": "18",
+          top: "60vh",
+          left: "68vw",
           "--initial-rotation": "33deg",
         }}
       >
-        <div className="heartBorder" style={{ transform: "scale(1.05)" }} />
+        <div className="heartBorder" style={{ transform: "scale(1.03)" }} />
         <div className="heart">
           <div style={{ zIndex: 1 }} className="heartBalloonText">
             <span>~70%</span>
@@ -37,7 +39,11 @@ function App() {
       <img src={Flag} alt="flag" className="flag" />
       <div
         className="cloud"
-        style={{ top: "72vh", left: "-4vw", transform: "scale(0.9)" }}
+        style={{
+          top: "70vh",
+          left: "0vw",
+          transform: "scale(0.8) rotate(5deg)",
+        }}
       >
         <div
           className="cloudHalf"
@@ -57,9 +63,9 @@ function App() {
       <div
         className="cloud"
         style={{
-          top: "38vh",
-          left: "8vw",
-          transform: "scale(0.4)",
+          top: "34vh",
+          left: "10vw",
+          transform: "scale(0.4) rotate(5deg)",
           filter: "blur(5px)",
         }}
       >
@@ -80,7 +86,11 @@ function App() {
       </div>
       <div
         className="cloud"
-        style={{ top: "90vh", left: "15vw", transform: "scale(0.9)" }}
+        style={{
+          top: "88vh",
+          left: "15vw",
+          transform: "scale(0.8) rotate(5deg)",
+        }}
       >
         <div
           className="cloudHalf"
@@ -100,9 +110,9 @@ function App() {
       <div
         className="cloud"
         style={{
-          top: "74vh",
+          top: "70vh",
           left: "29vw",
-          transform: "scale(0.3) rotate(5deg)",
+          transform: "scale(0.25) rotate(10deg)",
           filter: "blur(10px)",
         }}
       >
@@ -124,10 +134,10 @@ function App() {
       <div
         className="cloud"
         style={{
-          top: "64vh",
-          left: "48vw",
-          transform: "scale(0.4) rotate(-5deg)",
-          filter: "blur(10px)",
+          top: "60vh",
+          left: "47vw",
+          transform: "scale(0.35) rotate(-10deg)",
+          filter: "blur(8px)",
         }}
       >
         <div
@@ -148,7 +158,7 @@ function App() {
       <div
         className="cloud"
         style={{
-          top: "96vh",
+          top: "93vh",
           left: "70vw",
           transform: "scale(1.5) rotate(-23deg)",
           filter: "blur(2px)",
@@ -173,9 +183,9 @@ function App() {
         className="cloud"
         style={{
           top: "40vh",
-          left: "70vw",
+          left: "67vw",
           transform: "scale(0.5) rotate(-10deg)",
-          filter: "blur(6px)",
+          filter: "blur(4px)",
         }}
       >
         <div
@@ -196,10 +206,10 @@ function App() {
       <div
         className="cloud"
         style={{
-          top: "51vh",
-          left: "83vw",
+          top: "50vh",
+          left: "80vw",
           transform: "scale(0.7) rotate(-8deg)",
-          filter: "blur(6px)",
+          filter: "blur(3px)",
         }}
       >
         <div
