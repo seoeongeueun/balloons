@@ -231,7 +231,7 @@ main {
   left: 6.1rem;
   z-index: -1;
 }
-.balloon {
+.balloonLeft {
   cursor: pointer;
   position: absolute;
   left: 70px;

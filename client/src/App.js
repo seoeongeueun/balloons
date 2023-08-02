@@ -6,7 +6,7 @@ function App() {
     <main>
       <img src={Mansion} alt="mansion" className="mansion" />
       <div
-        className="balloon"
+        className="balloonLeft"
         style={{
           "--initial-rotation": "150deg",
           top: "90vh",
@@ -28,7 +28,7 @@ function App() {
           "--initial-rotation": "33deg",
         }}
       >
-        <div className="heartBorder" style={{ transform: "scale(1.03)" }} />
+        <div className="heartBorder" style={{ transform: "scale(1.02)" }} />
         <div className="heart">
           <div style={{ zIndex: 1 }} className="heartBalloonText">
             <span>~70%</span>
