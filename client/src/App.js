@@ -176,9 +176,9 @@ function App() {
     },
     {
       id: 14,
-      top: 42,
-      left: 64.5,
-      scale: 1.6,
+      top: 20,
+      left: 61,
+      scale: 1.1,
       rotate: -30,
       color: '#FF84AA',
       shape: 'daisy',
@@ -237,8 +237,8 @@ function App() {
     //in the order of pink, yellow, green, red, blue
     const colors = ['#FF84AA', '#FCBB11', '#A7DD2D', '#F31C12', '#3110C0'];
 
-    const shapes = ['bear', 'round', 'heart'];
-    const chances = [0.1, 0.6, 0.3];
+    const shapes = ['bear', 'round', 'heart', 'daisy'];
+    const chances = [0.1, 0.5, 0.3, 0.1];
     const randomValue = Math.random() * 1;
     let sum = 0;
     let index = 0;
@@ -427,12 +427,12 @@ function App() {
                     }}
                   >
                     <div className="petal" />
-                    <div className="petal" style={{ marginTop: '23px' }} />
+                    <div className="petal" style={{ marginTop: '33px' }} />
                     <div className="petal" />
                   </div>
                   <div className="petalsHalf" style={{ marginLeft: '6px' }}>
                     <div className="petal" />
-                    <div className="petal" style={{ marginTop: '23px' }} />
+                    <div className="petal" style={{ marginTop: '33px' }} />
                     <div className="petal" />
                   </div>
                 </div>

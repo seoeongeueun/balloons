@@ -313,6 +313,7 @@ main {
 }
 
 .daisy {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -333,19 +334,19 @@ main {
 
 .petal {
   background-color: #FFFFFF;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 100%;
-  margin-right: -7px;
-  border: 1.95px solid black;
+  margin-right: -12px;
+  border: 2px solid black;
 }
 
 .daisyCenter {
   position: relative;
   background-color: #FFFFFF;
-  width: 90px;
-  height: 90px;
-  top: -121px;
+  width: 130px;
+  height: 130px;
+  top: -175px;
   left: 6px;
   border-radius: 100%;
 }
@@ -353,12 +354,12 @@ main {
 .daisyYellow {
   position: relative;
   background: radial-gradient( at 30% 10%, #FFFFEE, #FFCE00, #FFCE00 );
-  width: 60px;
-  height: 55px;
+  width: 85px;
+  height: 80px;
   border-radius: 100%;
-  left: 12px;
-  top: 14px;
-  border: 1.95px solid black;
+  left: 22px;
+  top: 25px;
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -370,24 +371,24 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 20px;
+  width: 23px;
   margin-top: 5px;
 }
 
 .daisyEye {
-  width: 5px;
-  height: 12px;
+  width: 7px;
+  height: 15px;
   background-color: #050F06;
   border-radius: 100%;
 }
 
 .daisySmile {
-  width: 37px;
-  height: 15px;
+  width: 45px;
+  height: 20px;
   background-color: transparent;
-  border: 2px solid #050F06;
+  border: 3px solid #050F06;
   border-bottom: transparent;
-  border-radius: 20px 20px 0 0;
+  border-radius: 25px 25px 0 0;
   transform: scaleY(-1);
   margin-top: 5px;
 }
@@ -395,23 +396,23 @@ main {
 .daisyTip {
   width: 10px;
   height: 25px;
-  border: 1.95px solid black;
+  border: 2px solid black;
   border-radius: 5px;
   background-color: #FFFFFF;
   position: relative;
-  top: -130px;
+  top: -178px;
   transform: rotate(30deg);
-  left: -25px;
+  left: -33px;
   z-index: -1;
 }
 
 .daisyString {
   position: relative;
   top: -210px;
-  left: -73px;
+  left: -109px;
   height: 300px;
   background-color: black;
-  width: 1.5px;
+  width: 2px;
   transform: rotate(30deg);
   z-index: -2;
 }
