@@ -237,7 +237,7 @@ main {
   top: -0px;
   left: 8px;
   height: 300px;
-  border-right: 3px solid black;
+  border-right: 4px solid black;
   border-radius: 50%;
   width: 60px;
   transform: rotate(3deg);
@@ -261,7 +261,7 @@ main {
   position: relative;
   margin-top: 30px;
   box-sizing: border-box;
-  box-shadow: -7px -5.5px 0px -5.5px rgba(255, 255, 255, 1) inset;
+  box-shadow: -5px -9px 3px -7px rgba(255, 255, 255, 1) inset;
   outline: 2px solid black;
 
 }
@@ -281,12 +281,11 @@ main {
 .balloonString {
   position: relative;
   top: -250px;
-  left: 62px;
+  left: 53px;
   height: 300px;
-  border-left: 2px solid black;
-  border-radius: 50%;
-  width: 60px;
-  transform: rotate(10deg);
+  background-color: black;
+  width: 3px;
+  transform: rotate(0deg);
   z-index: -2;
 }
 

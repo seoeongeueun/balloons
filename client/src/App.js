@@ -1,9 +1,9 @@
 import Flag from "./images/flag.png";
 import Mansion from "./images/mansion.png";
+import { useState } from "react";
 
 function App() {
-  // eslint-disable-next-line no-unused-vars
-  const positions = [
+  const [positions, setPositions] = useState([
     {
       id: 1,
       top: "90vh",
@@ -12,8 +12,9 @@ function App() {
       rotate: "150deg",
       color: "#FF84AA",
       shape: "round",
-      more: false,
+      type: "shake-bottom",
       tip: false,
+      show: true,
     },
     {
       id: 2,
@@ -23,8 +24,9 @@ function App() {
       rotate: "160deg",
       color: "#FF84AA",
       shape: "round",
-      more: false,
+      type: "shake-bottom",
       tip: false,
+      show: true,
     },
     {
       id: 3,
@@ -34,8 +36,9 @@ function App() {
       rotate: "33deg",
       color: "#F31C12",
       shape: "heart",
-      more: false,
+      type: "enlarge",
       tip: false,
+      show: true,
     },
     {
       id: 4,
@@ -45,81 +48,124 @@ function App() {
       rotate: "20deg",
       color: "brown",
       shape: "bear",
-      more: false,
+      type: "shake-bottom-right",
       tip: false,
+      show: true,
+    },
+    {
+      id: 9,
+      top: "41vh",
+      left: "34vw",
+      scale: "0.9",
+      rotate: "140deg",
+      color: "#FCBB11",
+      shape: "round",
+      type: "shake-bottom-noTip",
+      tip: false,
+      show: true,
     },
     {
       id: 5,
+      top: "48vh",
+      left: "36vw",
+      scale: "1.2",
+      rotate: "110deg",
+      color: "#F31C12",
+      shape: "round",
+      type: "shake-bottom-noTip",
+      tip: false,
+      show: true,
+    },
+    {
+      id: 6,
       top: "78vh",
       left: "50vw",
       scale: "1",
       rotate: "135deg",
       color: "#FF84AA",
       shape: "round",
-      more: true,
+      type: "shake-bottom-more",
       tip: true,
+      show: true,
     },
     {
-      id: 6,
+      id: 7,
       top: "51vh",
       left: "40vw",
       scale: "1",
       rotate: "145deg",
       color: "#A7DD2D",
       shape: "round",
-      more: false,
+      type: "shake-bottom-noTip",
       tip: false,
+      show: true,
     },
     {
-      id: 7,
+      id: 8,
       top: "39vh",
       left: "39vw",
       scale: "0.8",
       rotate: "-30deg",
       color: "#FF84AA",
       shape: "bear",
-      more: false,
+      type: "shake-bear-tip",
       tip: true,
+      show: true,
     },
     {
-      id: 8,
+      id: 10,
       top: "82vh",
       left: "53vw",
       scale: "1.2",
       rotate: "160deg",
       color: "#FF84AA",
       shape: "round",
-      more: false,
+      type: "shake-bottom-tip",
       tip: true,
+      show: true,
     },
-  ];
+    {
+      id: 9,
+      top: "82vh",
+      left: "53vw",
+      scale: "1.2",
+      rotate: "160deg",
+      color: "#FF84AA",
+      shape: "round",
+      type: "shake-bottom-tip",
+      tip: true,
+      show: true,
+    },
+  ]);
+
+  const handlePop = (id) => {
+    const tmp = positions.map((balloon) => {
+      if (balloon.id === id) {
+        return { ...balloon, show: !balloon.show };
+      }
+      return balloon;
+    });
+    setPositions(tmp);
+  };
+
   return (
     <main>
       <img src={Mansion} alt="mansion" className="mansion" />
-      {positions.map((balloon, index) => (
+      {positions.map((balloon) => (
         <>
-          {balloon.shape === "round" ? (
+          {balloon.shape === "round" && balloon.show ? (
             <div
-              key={index + 1}
+              key={balloon.id}
               className="balloonLeft"
               style={{
                 "--initial-rotation": balloon.rotate,
                 top: balloon.top,
                 left: balloon.left,
                 "--initial-scale": balloon.scale,
-                animation: balloon.more
-                  ? "shake-bottom-more 2s ease-in-out infinite both"
-                  : balloon.tip
-                  ? "shake-bottom-tip 2s ease-in-out infinite both"
-                  : balloon.color === "#A7DD2D" &&
-                    "shake-bottom-noTip 2s linear infinite both",
-                WebkitAnimation: balloon.more
-                  ? "shake-bottom-more 2s ease-in-out infinite both"
-                  : balloon.tip
-                  ? "shake-bottom-tip 2s ease-in-out infinite both"
-                  : balloon.color === "#A7DD2D" &&
-                    "shake-bottom-noTip 2s linear infinite both",
+                animation: `${balloon.type} 2s ease-in-out infinite both`,
+                WebkitAnimation: `${balloon.type} 2s ease-in-out infinite both`,
               }}
+              onClick={() => handlePop(balloon.id)}
             >
               <div
                 className="roundShape"
@@ -129,6 +175,10 @@ function App() {
                       ? "radial-gradient(#FBE519 15%, #A7DD2D, #A7DD2D)"
                       : balloon.color === "#FF84AA"
                       ? "radial-gradient(#ffaebe 15%, #FF84AA, #FF84AA)"
+                      : balloon.color === "#F31C12"
+                      ? "radial-gradient(#F67052 10%, #F31C12, #F31C12)"
+                      : balloon.color === "#FCBB11"
+                      ? "radial-gradient(#FFF24A 10%, #FCBB11, #FCBB11)"
                       : null,
                   border: `5px solid ${balloon.color}`,
                 }}
@@ -137,20 +187,19 @@ function App() {
                 {balloon.tip && <div className="balloonString" />}
               </div>
             </div>
-          ) : balloon.shape === "bear" ? (
+          ) : balloon.shape === "bear" && balloon.show ? (
             <div
-              key={index + 1}
+              key={balloon.id}
               className="bear"
               style={{
                 "--initial-rotation": balloon.rotate,
                 top: balloon.top,
                 left: balloon.left,
                 "--initial-scale": balloon.scale,
-                animation:
-                  balloon.tip && "shake-bear-tip 2s ease-in-out infinite both",
-                WebkitAnimation:
-                  balloon.tip && "shake-bear-tip 2s ease-in-out infinite both",
+                animation: `${balloon.type} 2s ease-in-out infinite both`,
+                WebkitAnimation: `${balloon.type} 2s ease-in-out infinite both`,
               }}
+              onClick={() => handlePop(balloon.id)}
             >
               <div className="bearEars">
                 <div
@@ -184,9 +233,9 @@ function App() {
                 {balloon.tip && <div className="bearString" />}
               </div>
             </div>
-          ) : balloon.shape === "heart" ? (
+          ) : balloon.shape === "heart" && balloon.show ? (
             <div
-              key={index + 1}
+              key={balloon.id}
               className="heartBalloon"
               style={{
                 "--initial-scale": balloon.scale,
@@ -194,6 +243,7 @@ function App() {
                 left: balloon.left,
                 "--initial-rotation": balloon.rotate,
               }}
+              onClick={() => handlePop(balloon.id)}
             >
               <div
                 className="heartBorder"
