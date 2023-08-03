@@ -274,21 +274,32 @@ function App() {
       />
       {positions.find((b) => b.id === 3).show && (
         <div
-          className="heartBalloon"
+          className="heartContainer"
           style={{
-            '--initial-scale': '18',
+            '--initial-scale': '2',
             top: '60vh',
             left: '68vw',
             '--initial-rotation': '33deg',
+            animation: 'enlarge 2s ease-in-out infinite both',
+            WebkitAnimation: 'enlarge 2s ease-in-out infinite both',
           }}
           onClick={() => handlePop(3)}
         >
-          <div className="heartBorder" style={{ transform: 'scale(1.02)' }} />
-          <div className="heart">
-            <div style={{ zIndex: 1 }} className="heartBalloonText">
-              <span>~70%</span>
-              <span>SALE</span>
-            </div>
+          <div className="heartTop">
+            <div
+              className="heartCircle"
+              style={{
+                marginRight: '-13px',
+                boxShadow: '7px 2px 1px -4px #FFFFFF inset',
+              }}
+            />
+            <div className="heartCircle" />
+          </div>
+          <div className="heartBottom" />
+          <div className="heartTip" />
+          <div className="heartText">
+            <span>~70%</span>
+            <span>SALE</span>
           </div>
         </div>
       )}
@@ -381,25 +392,55 @@ function App() {
           ) : balloon.shape === 'heart' && balloon.show && balloon.id !== 3 ? (
             <div
               key={balloon.id}
-              className="heartBalloon"
+              className="heartContainer"
               style={{
                 '--initial-scale': balloon.scale.toString(),
                 top: balloon.top.toString() + 'vh',
                 left: balloon.left.toString() + 'vw',
                 '--initial-rotation': balloon.rotate.toString() + 'deg',
+                animation: `${balloon.type} 2s ease-in-out infinite both`,
+                WebkitAnimation: `${balloon.type} 2s ease-in-out infinite both`,
               }}
               onClick={() => handlePop(balloon.id)}
             >
-              <div
-                className="heartBorder"
-                style={{ transform: 'scale(1.02)' }}
-              />
-              <div className="heart">
-                <div style={{ zIndex: 1 }} className="heartBalloonText">
-                  <span>~70%</span>
-                  <span>SALE</span>
-                </div>
+              <div className="heartTop">
+                <div
+                  className="heartCircle"
+                  style={{
+                    marginRight: '-13px',
+                    boxShadow: '7px 2px 1px -4px #FFFFFF inset',
+                    backgroundColor: balloon.color,
+                    border: `4px solid ${balloon.color}`,
+                  }}
+                />
+                <div
+                  className="heartCircle"
+                  style={{
+                    backgroundColor: balloon.color,
+                    border: `4px solid ${balloon.color}`,
+                  }}
+                />
               </div>
+              <div
+                className="heartBottom"
+                style={{
+                  background:
+                    balloon.color === '#A7DD2D'
+                      ? 'radial-gradient(at 38% 38%, #FBE519 3%, #A7DD2D, #A7DD2D)'
+                      : balloon.color === '#FF84AA'
+                      ? 'radial-gradient(at 38% 38%, #ffaebe 3%, #FF84AA, #FF84AA)'
+                      : balloon.color === '#F31C12'
+                      ? 'radial-gradient(at 38% 38%, #F97421 3%, #F31C12, #F31C12)'
+                      : balloon.color === '#FCBB11'
+                      ? 'radial-gradient(at 38% 38%, #FFF24A 3%, #FCBB11, #FCBB11)'
+                      : balloon.color === '#3110C0' &&
+                        'radial-gradient(at 38% 38%, #6B66BE 3%, #3110C0, #3110C0)',
+                }}
+              />
+              <div
+                className="heartTip"
+                style={{ backgroundColor: balloon.color }}
+              />
             </div>
           ) : (
             balloon.shape === 'daisy' &&
