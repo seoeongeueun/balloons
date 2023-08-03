@@ -14,7 +14,7 @@ function App() {
       rotate: 150,
       color: '#FF84AA',
       shape: 'round',
-      type: 'shake-bottom',
+      type: 'shake-bottom-less',
       tip: false,
       show: true,
     },
@@ -26,7 +26,7 @@ function App() {
       rotate: 160,
       color: '#FF84AA',
       shape: 'round',
-      type: 'shake-bottom',
+      type: 'shake-bottom-less',
       tip: false,
       show: true,
     },
@@ -50,7 +50,67 @@ function App() {
       rotate: 20,
       color: 'brown',
       shape: 'bear',
-      type: 'shake-bottom-right',
+      type: 'shake-bear-noTip',
+      tip: false,
+      show: true,
+    },
+    {
+      id: 11,
+      top: 20,
+      left: 27,
+      scale: 0.8,
+      rotate: -30,
+      color: '#3110C0',
+      shape: 'bear',
+      type: 'shake-bear-noTip',
+      tip: false,
+      show: true,
+    },
+    {
+      id: 12,
+      top: 28,
+      left: 28,
+      scale: 1.2,
+      rotate: 165,
+      color: '#A7DD2D',
+      shape: 'round',
+      type: 'shake-bottom-noTip',
+      tip: false,
+      show: true,
+    },
+    {
+      id: 13,
+      top: 28,
+      left: 38,
+      scale: 1.45,
+      rotate: 135,
+      color: '#FF84AA',
+      shape: 'round',
+      type: 'shake-bottom-noTip',
+      tip: false,
+      show: true,
+    },
+    {
+      id: 13,
+      top: 10,
+      left: 34,
+      scale: 0.9,
+      rotate: -25,
+      color: '#FF84AA',
+      shape: 'bear',
+      type: 'shake-bear-noTip',
+      tip: false,
+      show: true,
+    },
+    {
+      id: 10,
+      top: 39,
+      left: 32,
+      scale: 1.1,
+      rotate: 190,
+      color: '#3110C0',
+      shape: 'round',
+      type: 'shake-bottom-noTip',
       tip: false,
       show: true,
     },
@@ -115,6 +175,18 @@ function App() {
       show: true,
     },
     {
+      id: 14,
+      top: 42,
+      left: 64.5,
+      scale: 1.6,
+      rotate: -30,
+      color: '#FF84AA',
+      shape: 'daisy',
+      type: 'shake-daisy-tip',
+      tip: true,
+      show: true,
+    },
+    {
       id: 10,
       top: 82,
       left: 53,
@@ -140,9 +212,7 @@ function App() {
   };
 
   const handleAdd = () => {
-    const balloon = positions
-      .reverse()
-      .find((balloon) => balloon.show === false);
+    const balloon = positions.find((balloon) => balloon.show === false);
     console.log(balloon);
     if (balloon) {
       handlePop(balloon.id);
@@ -162,11 +232,13 @@ function App() {
       left = Math.floor(Math.random() * (100 - 10) + 10);
     }
     const randomInteger = Math.floor(Math.random() * 11);
-    const scale = 0.3 + randomInteger * 0.1;
-    const colors = ['#FF84AA', '#FCBB11', '#A7DD2D', '#F31C12'];
+    const scale = 0.5 + randomInteger * 0.1;
+
+    //in the order of pink, yellow, green, red, blue
+    const colors = ['#FF84AA', '#FCBB11', '#A7DD2D', '#F31C12', '#3110C0'];
 
     const shapes = ['bear', 'round', 'heart'];
-    const chances = [0.2, 0.5, 0.3];
+    const chances = [0.1, 0.6, 0.3];
     const randomValue = Math.random() * 1;
     let sum = 0;
     let index = 0;
@@ -186,7 +258,7 @@ function App() {
       rotate: 150,
       color: colors[Math.floor(Math.random() * colors.length)],
       shape: shapes[index],
-      type: left >= 50 ? 'shake-bottom-right' : 'shake-bottom-noTip',
+      type: left >= 50 ? 'shake-bear-noTip' : 'shake-bottom-noTip',
       tip: false,
       show: true,
     };
@@ -200,9 +272,29 @@ function App() {
         className="mansion"
         onClick={() => handleAdd()}
       />
+      {positions.find((b) => b.id === 3).show && (
+        <div
+          className="heartBalloon"
+          style={{
+            '--initial-scale': '18',
+            top: '60vh',
+            left: '68vw',
+            '--initial-rotation': '33deg',
+          }}
+          onClick={() => handlePop(3)}
+        >
+          <div className="heartBorder" style={{ transform: 'scale(1.02)' }} />
+          <div className="heart">
+            <div style={{ zIndex: 1 }} className="heartBalloonText">
+              <span>~70%</span>
+              <span>SALE</span>
+            </div>
+          </div>
+        </div>
+      )}
       {positions.map((balloon) => (
         <>
-          {balloon.shape === 'round' && balloon.show ? (
+          {balloon.shape === 'round' && balloon.show && balloon.id !== 3 ? (
             <div
               key={balloon.id}
               className="balloonLeft"
@@ -221,22 +313,26 @@ function App() {
                 style={{
                   background:
                     balloon.color === '#A7DD2D'
-                      ? 'radial-gradient(#FBE519 15%, #A7DD2D, #A7DD2D)'
+                      ? 'radial-gradient(#FBE519 10%, #A7DD2D, #A7DD2D)'
                       : balloon.color === '#FF84AA'
-                      ? 'radial-gradient(#ffaebe 15%, #FF84AA, #FF84AA)'
+                      ? 'radial-gradient(#ffaebe 10%, #FF84AA, #FF84AA)'
                       : balloon.color === '#F31C12'
                       ? 'radial-gradient(#F67052 10%, #F31C12, #F31C12)'
                       : balloon.color === '#FCBB11'
                       ? 'radial-gradient(#FFF24A 10%, #FCBB11, #FCBB11)'
-                      : null,
+                      : balloon.color === '#3110C0' &&
+                        'radial-gradient(#6B66BE 10%, #3110C0, #3110C0)',
                   border: `5px solid ${balloon.color}`,
                 }}
               >
-                <div className="balloonTip" />
+                <div
+                  className="balloonTip"
+                  style={{ backgroundColor: balloon.color }}
+                />
                 {balloon.tip && <div className="balloonString" />}
               </div>
             </div>
-          ) : balloon.shape === 'bear' && balloon.show ? (
+          ) : balloon.shape === 'bear' && balloon.show && balloon.id !== 3 ? (
             <div
               key={balloon.id}
               className="bear"
@@ -282,7 +378,7 @@ function App() {
                 {balloon.tip && <div className="bearString" />}
               </div>
             </div>
-          ) : balloon.shape === 'heart' && balloon.show ? (
+          ) : balloon.shape === 'heart' && balloon.show && balloon.id !== 3 ? (
             <div
               key={balloon.id}
               className="heartBalloon"
@@ -305,7 +401,55 @@ function App() {
                 </div>
               </div>
             </div>
-          ) : null}
+          ) : (
+            balloon.shape === 'daisy' &&
+            balloon.show &&
+            balloon.id !== 3 && (
+              <div
+                className="daisy"
+                key={balloon.id}
+                style={{
+                  '--initial-rotation': balloon.rotate.toString() + 'deg',
+                  top: balloon.top.toString() + 'vh',
+                  left: balloon.left.toString() + 'vw',
+                  '--initial-scale': balloon.scale.toString(),
+                  animation: `${balloon.type} 2s ease-in-out infinite both`,
+                  WebkitAnimation: `${balloon.type} 2s ease-in-out infinite both`,
+                }}
+                onClick={() => handlePop(balloon.id)}
+              >
+                <div className="daisyPetals">
+                  <div
+                    className="petalsHalf"
+                    style={{
+                      transform: 'scaleY(-1)',
+                      marginBottom: '-2px',
+                    }}
+                  >
+                    <div className="petal" />
+                    <div className="petal" style={{ marginTop: '23px' }} />
+                    <div className="petal" />
+                  </div>
+                  <div className="petalsHalf" style={{ marginLeft: '6px' }}>
+                    <div className="petal" />
+                    <div className="petal" style={{ marginTop: '23px' }} />
+                    <div className="petal" />
+                  </div>
+                </div>
+                <div className="daisyCenter">
+                  <div className="daisyYellow">
+                    <div className="daisyEyes">
+                      <div className="daisyEye" />
+                      <div className="daisyEye" />
+                    </div>
+                    <div className="daisySmile" />
+                  </div>
+                </div>
+                <div className="daisyTip" />
+                {balloon.tip && <div className="daisyString" />}
+              </div>
+            )
+          )}
         </>
       ))}
       <img src={Flag} alt="flag" className="flag" />
