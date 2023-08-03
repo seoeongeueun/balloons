@@ -10,8 +10,8 @@ function App() {
       id: 1,
       top: 90,
       left: 30,
-      scale: '1.5',
-      rotate: '150deg',
+      scale: 1.5,
+      rotate: 150,
       color: '#FF84AA',
       shape: 'round',
       type: 'shake-bottom',
@@ -22,8 +22,8 @@ function App() {
       id: 2,
       top: 50,
       left: 17,
-      scale: '0.9',
-      rotate: '160deg',
+      scale: 0.9,
+      rotate: 160,
       color: '#FF84AA',
       shape: 'round',
       type: 'shake-bottom',
@@ -34,8 +34,8 @@ function App() {
       id: 3,
       top: 60,
       left: 68,
-      scale: '18',
-      rotate: '33deg',
+      scale: 18,
+      rotate: 33,
       color: '#F31C12',
       shape: 'heart',
       type: 'enlarge',
@@ -46,8 +46,8 @@ function App() {
       id: 4,
       top: 33,
       left: 2,
-      scale: '0.9',
-      rotate: '20deg',
+      scale: 0.9,
+      rotate: 20,
       color: 'brown',
       shape: 'bear',
       type: 'shake-bottom-right',
@@ -58,8 +58,8 @@ function App() {
       id: 9,
       top: 41,
       left: 34,
-      scale: '0.9',
-      rotate: '140deg',
+      scale: 0.9,
+      rotate: 140,
       color: '#FCBB11',
       shape: 'round',
       type: 'shake-bottom-noTip',
@@ -70,8 +70,8 @@ function App() {
       id: 5,
       top: 48,
       left: 36,
-      scale: '1.2',
-      rotate: '110deg',
+      scale: 1.2,
+      rotate: 110,
       color: '#F31C12',
       shape: 'round',
       type: 'shake-bottom-noTip',
@@ -82,8 +82,8 @@ function App() {
       id: 6,
       top: 78,
       left: 50,
-      scale: '1',
-      rotate: '135deg',
+      scale: 1,
+      rotate: 135,
       color: '#FF84AA',
       shape: 'round',
       type: 'shake-bottom-more',
@@ -94,8 +94,8 @@ function App() {
       id: 7,
       top: 51,
       left: 40,
-      scale: '1',
-      rotate: '145deg',
+      scale: 1,
+      rotate: 145,
       color: '#A7DD2D',
       shape: 'round',
       type: 'shake-bottom-noTip',
@@ -106,8 +106,8 @@ function App() {
       id: 8,
       top: 39,
       left: 39,
-      scale: '0.8',
-      rotate: '-30deg',
+      scale: 0.8,
+      rotate: -30,
       color: '#FF84AA',
       shape: 'bear',
       type: 'shake-bear-tip',
@@ -118,8 +118,8 @@ function App() {
       id: 10,
       top: 82,
       left: 53,
-      scale: '1.2',
-      rotate: '160deg',
+      scale: 1.2,
+      rotate: 160,
       color: '#FF84AA',
       shape: 'round',
       type: 'shake-bottom-tip',
@@ -147,8 +147,8 @@ function App() {
     if (balloon) {
       handlePop(balloon.id);
     } else {
-      if (positions.length < total)
-        setPositions([...positions, generateBallon()]);
+      if (positions.length < total) console.log(generateBallon());
+      setPositions([...positions, generateBallon()]);
     }
   };
 
@@ -163,16 +163,29 @@ function App() {
     }
     const randomInteger = Math.floor(Math.random() * 11);
     const scale = 0.3 + randomInteger * 0.1;
-    const shapes = ['heart', 'round', 'bear'];
     const colors = ['#FF84AA', '#FCBB11', '#A7DD2D', '#F31C12'];
+
+    const shapes = ['bear', 'round', 'heart'];
+    const chances = [0.2, 0.5, 0.3];
+    const randomValue = Math.random() * 1;
+    let sum = 0;
+    let index = 0;
+    for (let i = 0; i < shapes.length; i++) {
+      sum += chances[i];
+      if (randomValue < sum) {
+        index = i;
+        break;
+      }
+    }
+
     return {
       id: positions.length + 1,
       top: top,
       left: left,
       scale: scale,
-      rotate: '150deg',
+      rotate: 150,
       color: colors[Math.floor(Math.random() * colors.length)],
-      shape: shapes[Math.floor(Math.random() * shapes.length)],
+      shape: shapes[index],
       type: left >= 50 ? 'shake-bottom-right' : 'shake-bottom-noTip',
       tip: false,
       show: true,
@@ -194,10 +207,10 @@ function App() {
               key={balloon.id}
               className="balloonLeft"
               style={{
-                '--initial-rotation': balloon.rotate,
+                '--initial-rotation': balloon.rotate.toString() + 'deg',
                 top: balloon.top.toString() + 'vh',
                 left: balloon.left.toString() + 'vw',
-                '--initial-scale': balloon.scale,
+                '--initial-scale': balloon.scale.toString(),
                 animation: `${balloon.type} 2s ease-in-out infinite both`,
                 WebkitAnimation: `${balloon.type} 2s ease-in-out infinite both`,
               }}
@@ -228,10 +241,10 @@ function App() {
               key={balloon.id}
               className="bear"
               style={{
-                '--initial-rotation': balloon.rotate,
+                '--initial-rotation': balloon.rotate.toString() + 'deg',
                 top: balloon.top.toString() + 'vh',
                 left: balloon.left.toString() + 'vw',
-                '--initial-scale': balloon.scale,
+                '--initial-scale': balloon.scale.toString(),
                 animation: `${balloon.type} 2s ease-in-out infinite both`,
                 WebkitAnimation: `${balloon.type} 2s ease-in-out infinite both`,
               }}
@@ -274,10 +287,10 @@ function App() {
               key={balloon.id}
               className="heartBalloon"
               style={{
-                '--initial-scale': balloon.scale,
+                '--initial-scale': balloon.scale.toString(),
                 top: balloon.top.toString() + 'vh',
                 left: balloon.left.toString() + 'vw',
-                '--initial-rotation': balloon.rotate,
+                '--initial-rotation': balloon.rotate.toString() + 'deg',
               }}
               onClick={() => handlePop(balloon.id)}
             >
