@@ -4,11 +4,12 @@ import { useState } from 'react';
 import audioControls from './modules/audioControls';
 
 function App() {
+  const [total] = useState(30);
   const [positions, setPositions] = useState([
     {
       id: 1,
-      top: '90vh',
-      left: '30vw',
+      top: 90,
+      left: 30,
       scale: '1.5',
       rotate: '150deg',
       color: '#FF84AA',
@@ -19,8 +20,8 @@ function App() {
     },
     {
       id: 2,
-      top: '50vh',
-      left: '17vw',
+      top: 50,
+      left: 17,
       scale: '0.9',
       rotate: '160deg',
       color: '#FF84AA',
@@ -31,8 +32,8 @@ function App() {
     },
     {
       id: 3,
-      top: '60vh',
-      left: '68vw',
+      top: 60,
+      left: 68,
       scale: '18',
       rotate: '33deg',
       color: '#F31C12',
@@ -43,8 +44,8 @@ function App() {
     },
     {
       id: 4,
-      top: '33vh',
-      left: '2vw',
+      top: 33,
+      left: 2,
       scale: '0.9',
       rotate: '20deg',
       color: 'brown',
@@ -55,8 +56,8 @@ function App() {
     },
     {
       id: 9,
-      top: '41vh',
-      left: '34vw',
+      top: 41,
+      left: 34,
       scale: '0.9',
       rotate: '140deg',
       color: '#FCBB11',
@@ -67,8 +68,8 @@ function App() {
     },
     {
       id: 5,
-      top: '48vh',
-      left: '36vw',
+      top: 48,
+      left: 36,
       scale: '1.2',
       rotate: '110deg',
       color: '#F31C12',
@@ -79,8 +80,8 @@ function App() {
     },
     {
       id: 6,
-      top: '78vh',
-      left: '50vw',
+      top: 78,
+      left: 50,
       scale: '1',
       rotate: '135deg',
       color: '#FF84AA',
@@ -91,8 +92,8 @@ function App() {
     },
     {
       id: 7,
-      top: '51vh',
-      left: '40vw',
+      top: 51,
+      left: 40,
       scale: '1',
       rotate: '145deg',
       color: '#A7DD2D',
@@ -103,8 +104,8 @@ function App() {
     },
     {
       id: 8,
-      top: '39vh',
-      left: '39vw',
+      top: 39,
+      left: 39,
       scale: '0.8',
       rotate: '-30deg',
       color: '#FF84AA',
@@ -115,20 +116,8 @@ function App() {
     },
     {
       id: 10,
-      top: '82vh',
-      left: '53vw',
-      scale: '1.2',
-      rotate: '160deg',
-      color: '#FF84AA',
-      shape: 'round',
-      type: 'shake-bottom-tip',
-      tip: true,
-      show: true,
-    },
-    {
-      id: 9,
-      top: '82vh',
-      left: '53vw',
+      top: 82,
+      left: 53,
       scale: '1.2',
       rotate: '160deg',
       color: '#FF84AA',
@@ -143,16 +132,61 @@ function App() {
     audioControls.play('pop');
     const tmp = positions.map((balloon) => {
       if (balloon.id === id) {
-        return { ...balloon, show: false };
+        return { ...balloon, show: !balloon.show };
       }
       return balloon;
     });
     setPositions(tmp);
   };
 
+  const handleAdd = () => {
+    const balloon = positions
+      .reverse()
+      .find((balloon) => balloon.show === false);
+    console.log(balloon);
+    if (balloon) {
+      handlePop(balloon.id);
+    } else {
+      if (positions.length < total)
+        setPositions([...positions, generateBallon()]);
+    }
+  };
+
+  function generateBallon() {
+    let top = 90;
+    let left = 30;
+    while (positions.some((balloon) => balloon.top === top)) {
+      top = Math.floor(Math.random() * (100 - 10) + 10);
+    }
+    while (positions.some((balloon) => balloon.left === left)) {
+      left = Math.floor(Math.random() * (100 - 10) + 10);
+    }
+    const randomInteger = Math.floor(Math.random() * 11);
+    const scale = 0.3 + randomInteger * 0.1;
+    const shapes = ['heart', 'round', 'bear'];
+    const colors = ['#FF84AA', '#FCBB11', '#A7DD2D', '#F31C12'];
+    return {
+      id: positions.length + 1,
+      top: top,
+      left: left,
+      scale: scale,
+      rotate: '150deg',
+      color: colors[Math.floor(Math.random() * colors.length)],
+      shape: shapes[Math.floor(Math.random() * shapes.length)],
+      type: left >= 50 ? 'shake-bottom-right' : 'shake-bottom-noTip',
+      tip: false,
+      show: true,
+    };
+  }
+
   return (
     <main>
-      <img src={Mansion} alt="mansion" className="mansion" />
+      <img
+        src={Mansion}
+        alt="mansion"
+        className="mansion"
+        onClick={() => handleAdd()}
+      />
       {positions.map((balloon) => (
         <>
           {balloon.shape === 'round' && balloon.show ? (
@@ -161,8 +195,8 @@ function App() {
               className="balloonLeft"
               style={{
                 '--initial-rotation': balloon.rotate,
-                top: balloon.top,
-                left: balloon.left,
+                top: balloon.top.toString() + 'vh',
+                left: balloon.left.toString() + 'vw',
                 '--initial-scale': balloon.scale,
                 animation: `${balloon.type} 2s ease-in-out infinite both`,
                 WebkitAnimation: `${balloon.type} 2s ease-in-out infinite both`,
@@ -195,8 +229,8 @@ function App() {
               className="bear"
               style={{
                 '--initial-rotation': balloon.rotate,
-                top: balloon.top,
-                left: balloon.left,
+                top: balloon.top.toString() + 'vh',
+                left: balloon.left.toString() + 'vw',
                 '--initial-scale': balloon.scale,
                 animation: `${balloon.type} 2s ease-in-out infinite both`,
                 WebkitAnimation: `${balloon.type} 2s ease-in-out infinite both`,
@@ -241,8 +275,8 @@ function App() {
               className="heartBalloon"
               style={{
                 '--initial-scale': balloon.scale,
-                top: balloon.top,
-                left: balloon.left,
+                top: balloon.top.toString() + 'vh',
+                left: balloon.left.toString() + 'vw',
                 '--initial-rotation': balloon.rotate,
               }}
               onClick={() => handlePop(balloon.id)}
