@@ -35,8 +35,8 @@ function App() {
         className="cloud"
         style={{
           top: '34vh',
-          left: '13vw',
-          transform: 'scale(0.5) rotate(5deg)',
+          left: '11vw',
+          transform: 'scale(0.4) rotate(5deg)',
           filter: 'blur(5px)',
         }}
       >

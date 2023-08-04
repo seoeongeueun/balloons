@@ -262,7 +262,7 @@ const initialState = [
     rotate: 120,
     color: '#F31C12',
     shape: 'round',
-    type: 'shake-bottom-less',
+    type: 'shake-bottom-noTip',
     tip: false,
     show: true,
   },
