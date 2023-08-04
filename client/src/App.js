@@ -1,10 +1,11 @@
 import Flag from './images/flag.png';
 import Mansion from './images/mansion.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import audioControls from './modules/audioControls';
 
 function App() {
   const [total] = useState(30);
+  const [change, setChange] = useState(false);
   const [positions, setPositions] = useState([
     {
       id: 1,
@@ -175,6 +176,18 @@ function App() {
       show: true,
     },
     {
+      id: 25,
+      top: 12,
+      left: 52,
+      scale: 1.3,
+      rotate: 10,
+      color: '#FCBB11',
+      shape: 'heart',
+      type: 'shake-heart-noTip-right',
+      tip: false,
+      show: true,
+    },
+    {
       id: 14,
       top: 20,
       left: 61,
@@ -187,9 +200,45 @@ function App() {
       show: true,
     },
     {
+      id: 18,
+      top: 52,
+      left: 47,
+      scale: 0.8,
+      rotate: 210,
+      color: '#FF84AA',
+      shape: 'round',
+      type: 'shake-bottom-tip-right',
+      tip: false,
+      show: true,
+    },
+    {
+      id: 17,
+      top: 48,
+      left: 45,
+      scale: 0.6,
+      rotate: 220,
+      color: '#3110C0',
+      shape: 'round',
+      type: 'shake-bottom-tip-right',
+      tip: false,
+      show: true,
+    },
+    {
+      id: 16,
+      top: 55,
+      left: 47,
+      scale: 0.75,
+      rotate: 180,
+      color: '#A7DD2D',
+      shape: 'round',
+      type: 'shake-bottom-tip-right',
+      tip: true,
+      show: true,
+    },
+    {
       id: 10,
-      top: 82,
-      left: 53,
+      top: 85,
+      left: 54,
       scale: 1.2,
       rotate: 160,
       color: '#FF84AA',
@@ -198,7 +247,107 @@ function App() {
       tip: true,
       show: true,
     },
+
+    {
+      id: 24,
+      top: 35,
+      left: 55,
+      scale: 0.9,
+      rotate: 190,
+      color: '#F31C12',
+      shape: 'round',
+      type: 'shake-bottom-noTip-right-more',
+      tip: false,
+      show: true,
+    },
+    {
+      id: 25,
+      top: 13,
+      left: 58,
+      scale: 0.9,
+      rotate: 35,
+      color: '#F31C12',
+      shape: 'heart',
+      type: 'shake-heart-noTip-right',
+      tip: false,
+      show: true,
+    },
+    {
+      id: 20,
+      top: 40,
+      left: 52,
+      scale: 0.8,
+      rotate: 200,
+      color: '#A7DD2D',
+      shape: 'round',
+      type: 'shake-bottom-tip-right2',
+      tip: true,
+      show: true,
+    },
+    {
+      id: 23,
+      top: 90,
+      left: 56,
+      scale: 1,
+      rotate: 232,
+      color: '#FF84AA',
+      shape: 'round',
+      type: 'shake-bottom-tip-right-more',
+      tip: true,
+      show: true,
+    },
+    {
+      id: 22,
+      top: 48,
+      left: 56,
+      scale: 0.9,
+      rotate: 220,
+      color: '#FCBB11',
+      shape: 'round',
+      type: 'shake-bottom-tip-right2',
+      tip: true,
+      show: true,
+    },
+    {
+      id: 21,
+      top: 83,
+      left: 56,
+      scale: 0.85,
+      rotate: 218,
+      color: '#3110C0',
+      shape: 'round',
+      type: 'shake-bottom-tip-right-more',
+      tip: true,
+      show: true,
+    },
+    {
+      id: 19,
+      top: 82,
+      left: 55,
+      scale: 1.2,
+      rotate: 205,
+      color: '#FF84AA',
+      shape: 'round',
+      type: 'shake-bottom-tip-right-more',
+      tip: true,
+      show: true,
+    },
+    {
+      id: 15,
+      top: 32,
+      left: 52,
+      scale: 1.1,
+      rotate: 20,
+      color: '#F31C12',
+      shape: 'heart',
+      type: 'shake-heart-tip-right',
+      tip: true,
+      show: true,
+    },
   ]);
+  useEffect(() => {
+    setChange(!change);
+  }, [positions]);
 
   const handlePop = (id) => {
     audioControls.play('pop');
@@ -213,12 +362,11 @@ function App() {
 
   const handleAdd = () => {
     const balloon = positions.find((balloon) => balloon.show === false);
-    console.log(balloon);
     if (balloon) {
       handlePop(balloon.id);
     } else {
-      if (positions.length < total) console.log(generateBallon());
-      setPositions([...positions, generateBallon()]);
+      if (positions.length < total)
+        setPositions([...positions, generateBallon()]);
     }
   };
 
@@ -272,40 +420,41 @@ function App() {
         className="mansion"
         onClick={() => handleAdd()}
       />
-      {positions.find((b) => b.id === 3).show && (
-        <div
-          className="heartContainer"
-          style={{
-            '--initial-scale': '2',
-            top: '60vh',
-            left: '68vw',
-            '--initial-rotation': '33deg',
-            animation: 'enlarge 2s ease-in-out infinite both',
-            WebkitAnimation: 'enlarge 2s ease-in-out infinite both',
-          }}
-          onClick={() => handlePop(3)}
-        >
-          <div className="heartTop">
-            <div
-              className="heartCircle"
-              style={{
-                marginRight: '-13px',
-                boxShadow: '7px 2px 1px -4px #FFFFFF inset',
-              }}
-            />
-            <div className="heartCircle" />
-          </div>
-          <div className="heartBottom" />
-          <div className="heartTip" />
-          <div className="heartText">
-            <span>~70%</span>
-            <span>SALE</span>
-          </div>
-        </div>
-      )}
       {positions.map((balloon) => (
         <>
-          {balloon.shape === 'round' && balloon.show && balloon.id !== 3 ? (
+          {balloon.id === 3 && balloon.show ? (
+            <div
+              key={balloon.id}
+              className="heartContainer"
+              style={{
+                '--initial-scale': '3',
+                top: '65vh',
+                left: '59vw',
+                '--initial-rotation': '33deg',
+                animation: 'enlarge 2s ease-in-out infinite both',
+                WebkitAnimation: 'enlarge 2s ease-in-out infinite both',
+                zIndex: '5',
+              }}
+            >
+              <div className="heartTop">
+                <div
+                  className="heartCircle"
+                  style={{
+                    marginRight: '-13px',
+                    boxShadow: '7px 2px 1px -4px #FFFFFF inset',
+                  }}
+                  onClick={() => handlePop(3)}
+                />
+                <div className="heartCircle" onClick={() => handlePop(3)} />
+              </div>
+              <div className="heartBottom" onClick={() => handlePop(3)} />
+              <div className="heartTip" onClick={() => handlePop(3)} />
+              <div className="heartText" onClick={() => handlePop(3)}>
+                <span>~70%</span>
+                <span>SALE</span>
+              </div>
+            </div>
+          ) : balloon.shape === 'round' && balloon.show ? (
             <div
               key={balloon.id}
               className="balloonLeft"
@@ -343,7 +492,7 @@ function App() {
                 {balloon.tip && <div className="balloonString" />}
               </div>
             </div>
-          ) : balloon.shape === 'bear' && balloon.show && balloon.id !== 3 ? (
+          ) : balloon.shape === 'bear' && balloon.show ? (
             <div
               key={balloon.id}
               className="bear"
@@ -389,7 +538,7 @@ function App() {
                 {balloon.tip && <div className="bearString" />}
               </div>
             </div>
-          ) : balloon.shape === 'heart' && balloon.show && balloon.id !== 3 ? (
+          ) : balloon.shape === 'heart' && balloon.show ? (
             <div
               key={balloon.id}
               className="heartContainer"
@@ -411,6 +560,7 @@ function App() {
                     boxShadow: '7px 2px 1px -4px #FFFFFF inset',
                     backgroundColor: balloon.color,
                     border: `4px solid ${balloon.color}`,
+                    outline: '2px solid black',
                   }}
                 />
                 <div
@@ -418,12 +568,15 @@ function App() {
                   style={{
                     backgroundColor: balloon.color,
                     border: `4px solid ${balloon.color}`,
+                    outline: '2px solid black',
                   }}
                 />
               </div>
               <div
                 className="heartBottom"
                 style={{
+                  borderBottom: '2px solid black',
+                  borderRight: '2px solid black',
                   background:
                     balloon.color === '#A7DD2D'
                       ? 'radial-gradient(at 38% 38%, #FBE519 3%, #A7DD2D, #A7DD2D)'
@@ -439,13 +592,16 @@ function App() {
               />
               <div
                 className="heartTip"
-                style={{ backgroundColor: balloon.color }}
+                style={{
+                  backgroundColor: balloon.color,
+                  outline: '1.7px solid black',
+                }}
               />
+              {balloon.tip && <div className="heartString" />}
             </div>
           ) : (
             balloon.shape === 'daisy' &&
-            balloon.show &&
-            balloon.id !== 3 && (
+            balloon.show && (
               <div
                 className="daisy"
                 key={balloon.id}
