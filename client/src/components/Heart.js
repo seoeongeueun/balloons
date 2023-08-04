@@ -1,17 +1,18 @@
-function Heart({ id, color, top, left, scale, rotate, type, tip, onPop }) {
+function Heart(props) {
   return (
     <div
-      key={id}
+      key={props.id}
       className="heartContainer"
       style={{
-        '--initial-scale': scale.toString(),
-        top: top.toString() + 'vh',
-        left: left.toString() + 'vw',
-        '--initial-rotation': rotate.toString() + 'deg',
-        animation: `${type} 2s ease-in-out infinite both`,
-        WebkitAnimation: `${type} 2s ease-in-out infinite both`,
+        '--initial-scale': props.scale.toString(),
+        top: props.top.toString() + 'vh',
+        left: props.left.toString() + 'vw',
+        '--initial-rotation': props.rotate.toString() + 'deg',
+        animation: `${props.type} 2s ease-in-out infinite both`,
+        WebkitAnimation: `${props.type} 2s ease-in-out infinite both`,
+        zIndex: props.id === 3 && '5',
       }}
-      onClick={() => onPop(id)}
+      onClick={() => props.onPop(props.id)}
     >
       <div className="heartTop">
         <div
@@ -19,16 +20,16 @@ function Heart({ id, color, top, left, scale, rotate, type, tip, onPop }) {
           style={{
             marginRight: '-13px',
             boxShadow: '7px 2px 1px -4px #FFFFFF inset',
-            backgroundColor: color,
-            border: `4px solid ${color}`,
+            backgroundColor: props.color,
+            border: `4px solid ${props.color}`,
             outline: '2px solid black',
           }}
         />
         <div
           className="heartCircle"
           style={{
-            backgroundColor: color,
-            border: `4px solid ${color}`,
+            backgroundColor: props.color,
+            border: `4px solid ${props.color}`,
             outline: '2px solid black',
           }}
         />
@@ -39,26 +40,32 @@ function Heart({ id, color, top, left, scale, rotate, type, tip, onPop }) {
           borderBottom: '2px solid black',
           borderRight: '2px solid black',
           background:
-            color === '#A7DD2D'
+            props.color === '#A7DD2D'
               ? 'radial-gradient(at 38% 38%, #FBE519 3%, #A7DD2D, #A7DD2D)'
-              : color === '#FF84AA'
+              : props.color === '#FF84AA'
               ? 'radial-gradient(at 38% 38%, #ffaebe 3%, #FF84AA, #FF84AA)'
-              : color === '#F31C12'
+              : props.color === '#F31C12'
               ? 'radial-gradient(at 38% 38%, #F97421 3%, #F31C12, #F31C12)'
-              : color === '#FCBB11'
+              : props.color === '#FCBB11'
               ? 'radial-gradient(at 38% 38%, #FFF24A 3%, #FCBB11, #FCBB11)'
-              : color === '#3110C0' &&
+              : props.color === '#3110C0' &&
                 'radial-gradient(at 38% 38%, #6B66BE 3%, #3110C0, #3110C0)',
         }}
       />
       <div
         className="heartTip"
         style={{
-          backgroundColor: color,
+          backgroundColor: props.color,
           outline: '1.7px solid black',
         }}
       />
-      {tip && <div className="heartString" />}
+      {props.tip && <div className="heartString" />}
+      {props.id === 3 && (
+        <div className="heartText" onClick={() => props.onPop(3)}>
+          <span>~70%</span>
+          <span>SALE</span>
+        </div>
+      )}
     </div>
   );
 }

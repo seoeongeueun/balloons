@@ -1,17 +1,17 @@
-function Bear({ id, top, left, scale, rotate, type, tip, onPop }) {
+function Bear(props) {
   return (
     <div
-      key={id}
+      key={props.id}
       className="bear"
       style={{
-        '--initial-rotation': rotate.toString() + 'deg',
-        top: top.toString() + 'vh',
-        left: left.toString() + 'vw',
-        '--initial-scale': scale.toString(),
-        animation: `${type} 2s ease-in-out infinite both`,
-        WebkitAnimation: `${type} 2s ease-in-out infinite both`,
+        '--initial-rotation': props.rotate.toString() + 'deg',
+        top: props.top.toString() + 'vh',
+        left: props.left.toString() + 'vw',
+        '--initial-scale': props.scale.toString(),
+        animation: `${props.type} 2s ease-in-out infinite both`,
+        WebkitAnimation: `${props.type} 2s ease-in-out infinite both`,
       }}
-      onClick={() => onPop(id)}
+      onClick={() => props.onPop(props.id)}
     >
       <div className="bearEars">
         <div
@@ -42,7 +42,7 @@ function Bear({ id, top, left, scale, rotate, type, tip, onPop }) {
           <div className="mouthOpen" />
         </div>
         <div className="bearTip" />
-        {tip && <div className="bearString" />}
+        {props.tip && <div className="bearString" />}
       </div>
     </div>
   );

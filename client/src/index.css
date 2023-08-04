@@ -25,6 +25,11 @@ main {
   overflow: hidden;
 }
 
+.balloonsContainer {
+  width: 100vw;
+  height: 100vh;
+}
+
 .flag {
   width: 47rem;
   position: absolute;
