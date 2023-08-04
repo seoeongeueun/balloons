@@ -23,11 +23,29 @@ main {
   position: absolute;
   z-index: -1;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mansionContainer {
+  width: 100vw;
+  height: 35vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.mansionContainer img {
+  height: 35vh;
+  z-index: 4;
+  cursor: pointer;
 }
 
 .balloonsContainer {
-  width: 100vw;
-  height: 100vh;
+  width: 99vw;
+  height: 65vh;
 }
 
 .flag {
@@ -35,15 +53,6 @@ main {
   position: absolute;
   top: 49vh;
   left: 10vw;
-}
-
-.mansion {
-  width: 57rem;
-  position: absolute;
-  bottom: 0;
-  left: 35vw;
-  z-index: 5;
-  cursor: pointer;
 }
 
 .cloud {
@@ -242,7 +251,7 @@ main {
   position: relative;
   top: 60px;
   left: 67px;
-  height: 30vh;
+  height: 20vh;
   background-color: black;
   width: 2.5px;
   transform: rotate(0deg);
@@ -284,9 +293,9 @@ main {
 
 .balloonString {
   position: relative;
-  top: -500px;
+  top: -45vh;
   left: 53px;
-  height: 500px;
+  height: 45vh;
   background-color: black;
   width: 2px;
   transform: rotate(0deg);
@@ -323,8 +332,6 @@ main {
   flex-direction: column;
   align-items: center;
   position: absolute;
-  left: 10vw;
-  top: 10vh;
 }
 .daisyPetals {
   display: flex;
@@ -413,9 +420,9 @@ main {
 
 .daisyString {
   position: relative;
-  top: -210px;
-  left: -109px;
-  height: 300px;
+  top: -215px;
+  left: -135px;
+  height: 400px;
   background-color: black;
   width: 2px;
   transform: rotate(30deg);

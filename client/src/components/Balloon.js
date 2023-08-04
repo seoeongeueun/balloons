@@ -1,9 +1,4 @@
-import { useEffect } from 'react';
-
 function Balloon(props) {
-  useEffect(() => {
-    console.log(props);
-  }, []);
   return (
     <div
       key={props.id}

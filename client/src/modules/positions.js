@@ -207,7 +207,7 @@ const initialState = [
   {
     id: 14,
     top: 20,
-    left: 61,
+    left: 64,
     scale: 1.1,
     rotate: -30,
     color: '#FF84AA',
@@ -382,7 +382,7 @@ export default function positions(state = initialState, action) {
         balloon.id === action.id ? { ...balloon, show: !balloon.show } : balloon
       );
     case ADD_BALLOON:
-      return state.push(action.balloon);
+      return [...state, action.balloon];
     default:
       return state;
   }
