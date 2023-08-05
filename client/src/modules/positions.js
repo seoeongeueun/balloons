@@ -38,8 +38,8 @@ const initialState = [
   },
   {
     id: 3,
-    top: 60,
-    left: 68,
+    top: 58,
+    left: 69,
     scale: 3,
     rotate: 33,
     color: '#F31C12',

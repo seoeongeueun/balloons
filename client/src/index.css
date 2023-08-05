@@ -37,7 +37,7 @@ main {
   align-items: flex-end;
 }
 
-.mansionContainer img {
+.mansion{
   height: 35vh;
   z-index: 4;
   cursor: pointer;

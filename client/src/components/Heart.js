@@ -15,10 +15,14 @@ function Heart(props) {
         zIndex: props.id === 3 && '5',
         position: 'absolute',
       }}
-      onClick={() => {
-        audioControls.play('pop');
-        props.onPop(props.id);
-      }}
+      onClick={
+        props.id !== 3
+          ? () => {
+              audioControls.play('pop');
+              props.onPop(props.id);
+            }
+          : null
+      }
     >
       <div className="heartTop">
         <div
@@ -30,6 +34,14 @@ function Heart(props) {
             border: `4px solid ${props.color}`,
             outline: '2px solid black',
           }}
+          onClick={
+            props.id === 3
+              ? () => {
+                  audioControls.play('pop');
+                  props.onPop(props.id);
+                }
+              : null
+          }
         />
         <div
           className="heartCircle"
@@ -38,6 +50,14 @@ function Heart(props) {
             border: `4px solid ${props.color}`,
             outline: '2px solid black',
           }}
+          onClick={
+            props.id === 3
+              ? () => {
+                  audioControls.play('pop');
+                  props.onPop(props.id);
+                }
+              : null
+          }
         />
       </div>
       <div
@@ -57,6 +77,14 @@ function Heart(props) {
               : props.color === '#3110C0' &&
                 'radial-gradient(at 38% 38%, #6B66BE 3%, #3110C0, #3110C0)',
         }}
+        onClick={
+          props.id === 3
+            ? () => {
+                audioControls.play('pop');
+                props.onPop(props.id);
+              }
+            : null
+        }
       />
       <div
         className="heartTip"
@@ -64,9 +92,16 @@ function Heart(props) {
           backgroundColor: props.color,
           outline: '1.7px solid black',
         }}
+        onClick={props.id === 3 ? () => props.onPop(3) : null}
       />
       {props.id === 3 && (
-        <div className="heartText" onClick={() => props.onPop(3)}>
+        <div
+          className="heartText"
+          onClick={() => {
+            audioControls.play('pop');
+            props.onPop(3);
+          }}
+        >
           <span>~70%</span>
           <span>SALE</span>
         </div>
