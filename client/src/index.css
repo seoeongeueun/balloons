@@ -18,7 +18,7 @@ html {
 main {
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(#00EBFF, #00CBFB);
+  background-image: linear-gradient(#53f1ff, #00BBF7);
   margin: 0;
   position: absolute;
   z-index: -1;
@@ -53,15 +53,97 @@ main {
 }
 
 .flag {
-  width: 47rem;
+  height: 17vh;
   position: absolute;
   top: 49vh;
   left: 10vw;
-  opacity: 0;
+}
+
+.rainbow {
+  height: 10vh;
+  position: absolute;
+}
+
+.rainbowContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 5vw;
+  top: 28vh;
+  z-index: 1;
+  transform: rotate(-7deg);
+}
+
+.redRing {
+  width: 200px;
+  height: 100px;
+  border-radius: 100px 100px 0 0;
+  background-color: #f31c12;
+  margin-bottom: -87px;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+}
+
+.orangeRing {
+  width: 170px;
+  height: 85px;
+  border-radius: 85px 85px 0 0;
+  background-color: #fa7514;
+  margin-bottom: -72px;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+}
+.yellowRing {
+  width: 140px;
+  height: 70px;
+  border-radius: 70px 70px 0 0;
+  background-color: #ffcc11;
+  margin-bottom: -57px;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+}
+.greenRing {
+  width: 110px;
+  height: 55px;
+  border-radius: 55px 55px 0 0;
+  background-color: #33aa33;
+  margin-bottom: -42px;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+}
+.blueRing {
+  width: 80px;
+  height: 40px;
+  border-radius: 40px 40px 0 0;
+  background-color: #002186;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  margin-bottom: -25px;
+}
+.emptyRing {
+  width: 50px;
+  height: 28px;
+  border-radius: 25px 25px 0 0;
+  background-color: #30DAFB;
+}
+
+.clouds {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 200px;
+  margin-top: -100px;
+  z-index: 2;
 }
 
 .cloud {
-  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,8 +208,7 @@ main {
   flex-direction: column;
   width: 18.5rem;
   cursor: pointer;
-  -webkit-animation: shake-bear-noTip 2s ease-in-out infinite both;
-          animation: shake-bear-noTip 2s ease-in-out infinite both;
+  z-index: 3;
 }
 
 .bearEars {
@@ -265,6 +346,7 @@ main {
 .balloonLeft {
   cursor: pointer;
   display: flex;
+  z-index: 3;
 }
 
 .roundShape {
@@ -330,6 +412,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 3;
 }
 
 .daisyPetals {
@@ -431,6 +514,7 @@ main {
 .heartContainer {
   position: absolute;
   max-height: 100px;
+  z-index: 3;
 }
 
 .heartTop {

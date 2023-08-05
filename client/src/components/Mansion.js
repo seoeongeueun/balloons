@@ -11,7 +11,7 @@ function Mansion() {
     if (balloon) {
       onPop(balloon.id);
     } else {
-      if (positions.length < 40) {
+      if (positions.length < 101) {
         dispatch(addBalloon(generateBallon()));
       }
     }
@@ -31,7 +31,8 @@ function Mansion() {
 
     //in the order of pink, yellow, green, red, blue
     const colors = ['#FF84AA', '#FCBB11', '#A7DD2D', '#F31C12', '#3110C0'];
-
+    const degrees = [-30, 30, -10, 10, -20, 20];
+    const roundDegrees = [130, 160, 190, 210, 240];
     const shapes = ['bear', 'round', 'heart', 'daisy'];
     const chances = [0.1, 0.5, 0.3, 0.1];
     const randomValue = Math.random() * 1;
@@ -49,10 +50,20 @@ function Mansion() {
       top: top,
       left: left,
       scale: scale,
-      rotate: 150,
+      rotate:
+        shapes[index] === 'round'
+          ? roundDegrees[Math.floor(Math.random() * roundDegrees.length)]
+          : degrees[Math.floor(Math.random() * degrees.length)],
       color: colors[Math.floor(Math.random() * colors.length)],
       shape: shapes[index],
-      type: left >= 50 ? 'shake-bear-noTip' : 'shake-bottom-noTip',
+      type:
+        shapes[index] === 'bear'
+          ? 'shake-bear-noTip'
+          : shapes[index] === 'round'
+          ? 'shake-bottom-noTip'
+          : shapes[index] === 'heart'
+          ? 'shake-heart-noTip-right'
+          : 'shake-daisy-noTip',
       tip: false,
       show: true,
     };

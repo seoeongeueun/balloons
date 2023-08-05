@@ -73,7 +73,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 6,
     top: -23,
     left: 15,
     scale: 0.9,
@@ -85,7 +85,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 7,
     top: 14,
     left: 12,
     scale: 1.2,
@@ -97,7 +97,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 8,
     top: 0,
     left: 16,
     scale: 0.8,
@@ -109,7 +109,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 9,
     top: 12,
     left: 21,
     scale: 1.15,
@@ -121,7 +121,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 10,
     top: -1,
     left: 22,
     scale: 1.2,
@@ -133,7 +133,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 11,
     top: 21,
     left: 4,
     scale: 0.8,
@@ -145,7 +145,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 12,
     top: 13,
     left: 7,
     scale: 1.3,
@@ -157,7 +157,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 13,
     top: -15,
     left: 36,
     scale: 0.9,
@@ -170,7 +170,7 @@ const initialState = [
   },
 
   {
-    id: 5,
+    id: 14,
     top: -11,
     left: 27,
     scale: 0.9,
@@ -182,7 +182,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 15,
     top: 13,
     left: 4,
     scale: 1.3,
@@ -194,7 +194,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 16,
     top: 13,
     left: 5,
     scale: 1.3,
@@ -206,7 +206,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 17,
     top: 21,
     left: 12,
     scale: 0.9,
@@ -218,7 +218,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 18,
     top: 33,
     left: 21,
     scale: 0.8,
@@ -230,7 +230,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 19,
     top: 29,
     left: 8,
     scale: 0.8,
@@ -242,7 +242,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 20,
     top: 17,
     left: 16,
     scale: 0.7,
@@ -255,7 +255,7 @@ const initialState = [
   },
 
   {
-    id: 5,
+    id: 21,
     top: 27,
     left: 17,
     scale: 1,
@@ -267,7 +267,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 11,
+    id: 22,
     top: 18,
     left: 26,
     scale: 0.8,
@@ -279,7 +279,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 12,
+    id: 23,
     top: 16,
     left: 37,
     scale: 1.3,
@@ -291,7 +291,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 12,
+    id: 24,
     top: 30,
     left: 24,
     scale: 1.2,
@@ -303,7 +303,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 13,
+    id: 25,
     top: 25,
     left: 32,
     scale: 1.3,
@@ -315,7 +315,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 13,
+    id: 26,
     top: 6,
     left: 30,
     scale: 0.8,
@@ -327,7 +327,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 10,
+    id: 27,
     top: 37,
     left: 27,
     scale: 1.1,
@@ -339,7 +339,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 30,
+    id: 28,
     top: 65,
     left: 38,
     scale: 0.9,
@@ -351,7 +351,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 31,
+    id: 29,
     top: 64,
     left: 44,
     scale: 1.1,
@@ -363,7 +363,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 31,
+    id: 30,
     top: 57,
     left: 50,
     scale: 1.3,
@@ -387,7 +387,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 10,
+    id: 32,
     top: 40,
     left: 36,
     scale: 1.2,
@@ -399,7 +399,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 9,
+    id: 33,
     top: 41,
     left: 32,
     scale: 0.9,
@@ -411,7 +411,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 34,
     top: 48,
     left: 36,
     scale: 1.2,
@@ -423,7 +423,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 6,
+    id: 35,
     bottom: -315,
     right: -338,
     scale: 1,
@@ -435,7 +435,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 5,
+    id: 36,
     top: 2,
     left: 41,
     scale: 0.8,
@@ -447,7 +447,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 7,
+    id: 37,
     top: 51,
     left: 40,
     scale: 1,
@@ -459,7 +459,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 8,
+    id: 38,
     bottom: 130,
     right: 328,
     scale: 0.8,
@@ -471,7 +471,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 27,
+    id: 39,
     top: 40,
     left: 42,
     scale: 1.2,
@@ -483,7 +483,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 27,
+    id: 40,
     top: 29,
     left: 42,
     scale: 0.95,
@@ -495,7 +495,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 10,
+    id: 41,
     top: 24,
     left: 38,
     scale: 1.1,
@@ -507,7 +507,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 26,
+    id: 42,
     top: 58,
     left: 51,
     scale: 1.1,
@@ -519,7 +519,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 25,
+    id: 43,
     top: 15,
     left: 50,
     scale: 1.3,
@@ -531,7 +531,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 25,
+    id: 44,
     top: 22,
     left: 48,
     scale: 1.4,
@@ -543,7 +543,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 25,
+    id: 45,
     top: -17,
     left: 73,
     scale: 0.8,
@@ -555,7 +555,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 46,
     top: 22,
     left: 70,
     scale: 1.1,
@@ -567,7 +567,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 47,
     top: 12,
     left: 68,
     scale: 0.7,
@@ -579,7 +579,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 48,
     top: 11,
     left: 94,
     scale: 0.8,
@@ -591,7 +591,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 49,
     top: 1,
     left: 85,
     scale: 1,
@@ -603,7 +603,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 50,
     top: -6,
     left: 84,
     scale: 0.7,
@@ -615,7 +615,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 51,
     top: 2,
     left: 80,
     scale: 1,
@@ -627,7 +627,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 52,
     top: 17,
     left: 76,
     scale: 1.3,
@@ -639,7 +639,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 53,
     top: 20,
     left: 82,
     scale: 0.8,
@@ -651,7 +651,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 54,
     top: 27,
     left: 90,
     scale: 0.8,
@@ -663,7 +663,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 55,
     top: 21,
     left: 76,
     scale: 0.85,
@@ -675,7 +675,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 56,
     top: 21,
     left: 67,
     scale: 0.9,
@@ -687,7 +687,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 57,
     top: 32,
     left: 71,
     scale: 1,
@@ -698,9 +698,8 @@ const initialState = [
     tip: false,
     show: true,
   },
-
   {
-    id: 24,
+    id: 58,
     top: 11,
     left: 63,
     scale: 1,
@@ -712,7 +711,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 59,
     top: 13,
     left: 59,
     scale: 1.2,
@@ -724,7 +723,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 60,
     top: 19,
     left: 58,
     scale: 1.1,
@@ -736,7 +735,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 61,
     top: 8,
     left: 58,
     scale: 0.7,
@@ -748,7 +747,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 62,
     top: 14,
     left: 57,
     scale: 0.9,
@@ -760,7 +759,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 25,
+    id: 63,
     top: -10,
     left: 57,
     scale: 0.8,
@@ -772,7 +771,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 25,
+    id: 64,
     top: 10,
     left: 51,
     scale: 1.4,
@@ -784,7 +783,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 14,
+    id: 65,
     bottom: -310,
     right: -510,
     scale: 1.1,
@@ -796,7 +795,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 18,
+    id: 66,
     top: 50,
     left: 47,
     scale: 0.8,
@@ -808,7 +807,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 17,
+    id: 67,
     top: 44,
     left: 45,
     scale: 0.65,
@@ -820,7 +819,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 16,
+    id: 68,
     bottom: -69,
     right: -8,
     scale: 0.8,
@@ -832,7 +831,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 10,
+    id: 69,
     bottom: -361,
     right: -130,
     scale: 1.2,
@@ -844,7 +843,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 70,
     top: 35,
     left: 55,
     scale: 0.9,
@@ -856,7 +855,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 26,
+    id: 71,
     top: 23,
     left: 60,
     scale: 0.8,
@@ -868,7 +867,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 24,
+    id: 72,
     top: 36,
     left: 70,
     scale: 0.8,
@@ -880,7 +879,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 25,
+    id: 73,
     top: 11,
     left: 59,
     scale: 1,
@@ -892,7 +891,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 20,
+    id: 74,
     bottom: 82,
     right: 48,
     scale: 0.9,
@@ -904,7 +903,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 23,
+    id: 75,
     bottom: -404,
     right: -192,
     scale: 0.9,
@@ -916,7 +915,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 22,
+    id: 76,
     bottom: 0,
     right: -145,
     scale: 0.9,
@@ -928,7 +927,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 21,
+    id: 77,
     bottom: -339,
     right: -95,
     scale: 0.9,
@@ -940,7 +939,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 19,
+    id: 78,
     bottom: -314,
     right: -242,
     scale: 1.2,
@@ -952,7 +951,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 25,
+    id: 79,
     top: 0,
     left: 74,
     scale: 1.3,
@@ -964,7 +963,7 @@ const initialState = [
     show: true,
   },
   {
-    id: 15,
+    id: 80,
     bottom: 220,
     right: -239,
     scale: 1.1,
@@ -973,6 +972,18 @@ const initialState = [
     shape: 'heart',
     type: 'shake-heart-tip-right',
     tip: true,
+    show: true,
+  },
+  {
+    id: 81,
+    top: 86,
+    left: 67,
+    scale: 0.5,
+    rotate: 20,
+    color: '#F31C12',
+    shape: 'daisy',
+    type: 'shake-bottom-less',
+    tip: false,
     show: true,
   },
 ];
