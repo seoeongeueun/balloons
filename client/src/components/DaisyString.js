@@ -1,3 +1,5 @@
+import audioControls from '../modules/audioControls';
+
 function DaisyString(props) {
   return (
     <div
@@ -12,7 +14,10 @@ function DaisyString(props) {
         marginRight: props.right + 'px',
         visibility: props.show ? 'visible' : 'hidden',
       }}
-      onClick={() => props.onPop(props.id)}
+      onClick={() => {
+        audioControls.play('pop');
+        props.onPop(props.id);
+      }}
     >
       <div className="daisyPetals">
         <div

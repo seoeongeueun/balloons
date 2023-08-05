@@ -1,3 +1,5 @@
+import audioControls from '../modules/audioControls';
+
 function Heart(props) {
   return (
     <div
@@ -13,7 +15,10 @@ function Heart(props) {
         zIndex: props.id === 3 && '5',
         position: 'absolute',
       }}
-      onClick={() => props.onPop(props.id)}
+      onClick={() => {
+        audioControls.play('pop');
+        props.onPop(props.id);
+      }}
     >
       <div className="heartTop">
         <div

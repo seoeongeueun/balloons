@@ -1,3 +1,5 @@
+import audioControls from '../modules/audioControls';
+
 function Bear(props) {
   return (
     <div
@@ -12,7 +14,10 @@ function Bear(props) {
         WebkitAnimation: `${props.type} 2s ease-in-out infinite both`,
         position: 'absolute',
       }}
-      onClick={() => props.onPop(props.id)}
+      onClick={() => {
+        audioControls.play('pop');
+        props.onPop(props.id);
+      }}
     >
       <div className="bearEars">
         <div

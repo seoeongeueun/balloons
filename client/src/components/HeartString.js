@@ -1,3 +1,4 @@
+import audioControls from '../modules/audioControls';
 function HeartString(props) {
   return (
     <div
@@ -12,7 +13,10 @@ function HeartString(props) {
         marginRight: props.right + 'px',
         visibility: props.show ? 'visible' : 'hidden',
       }}
-      onClick={() => props.onPop(props.id)}
+      onClick={() => {
+        audioControls.play('pop');
+        props.onPop(props.id);
+      }}
     >
       <div className="heartTop">
         <div

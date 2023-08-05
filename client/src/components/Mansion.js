@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { addBalloon, popBalloon } from '../modules/positions';
 import MansionImg from '../images/mansion.png';
+import audioControls from '../modules/audioControls.js';
 
 function Mansion() {
   const positions = useSelector((state) => state.positions);
@@ -9,9 +10,11 @@ function Mansion() {
   const onAdd = () => {
     const balloon = positions.find((balloon) => balloon.show === false);
     if (balloon) {
+      audioControls.play('pop');
       onPop(balloon.id);
     } else {
-      if (positions.length < 101) {
+      if (positions.length < 111) {
+        audioControls.play('pop');
         dispatch(addBalloon(generateBallon()));
       }
     }
@@ -32,7 +35,7 @@ function Mansion() {
     //in the order of pink, yellow, green, red, blue
     const colors = ['#FF84AA', '#FCBB11', '#A7DD2D', '#F31C12', '#3110C0'];
     const degrees = [-30, 30, -10, 10, -20, 20];
-    const roundDegrees = [130, 160, 190, 210, 240];
+    const roundDegrees = [120, 160, 190, 220, 250];
     const shapes = ['bear', 'round', 'heart', 'daisy'];
     const chances = [0.1, 0.5, 0.3, 0.1];
     const randomValue = Math.random() * 1;
