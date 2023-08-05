@@ -1,17 +1,16 @@
-function Heart(props) {
+function HeartString(props) {
   return (
     <div
       key={props.id}
       className="heartContainer"
       style={{
         '--initial-scale': props.scale.toString(),
-        top: props.top.toString() + 'vh',
-        left: props.left.toString() + 'vw',
         '--initial-rotation': props.rotate.toString() + 'deg',
         animation: `${props.type} 2s ease-in-out infinite both`,
         WebkitAnimation: `${props.type} 2s ease-in-out infinite both`,
-        zIndex: props.id === 3 && '5',
-        position: 'absolute',
+        marginBottom: props.bottom + 'px',
+        marginRight: props.right + 'px',
+        visibility: props.show ? 'visible' : 'hidden',
       }}
       onClick={() => props.onPop(props.id)}
     >
@@ -60,14 +59,9 @@ function Heart(props) {
           outline: '1.7px solid black',
         }}
       />
-      {props.id === 3 && (
-        <div className="heartText" onClick={() => props.onPop(3)}>
-          <span>~70%</span>
-          <span>SALE</span>
-        </div>
-      )}
+      <div className="heartString" />
     </div>
   );
 }
 
-export default Heart;
+export default HeartString;

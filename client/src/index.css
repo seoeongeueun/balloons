@@ -43,9 +43,13 @@ main {
   cursor: pointer;
 }
 
-.balloonsContainer {
-  width: 99vw;
+.centerBalloonsContainer {
+  width: 60vw;
   height: 65vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .flag {
@@ -53,6 +57,7 @@ main {
   position: absolute;
   top: 49vh;
   left: 10vw;
+  opacity: 0;
 }
 
 .cloud {
@@ -120,7 +125,6 @@ main {
   display: flex;
   flex-direction: column;
   width: 18.5rem;
-  position: absolute;
   cursor: pointer;
   -webkit-animation: shake-bear-noTip 2s ease-in-out infinite both;
           animation: shake-bear-noTip 2s ease-in-out infinite both;
@@ -260,11 +264,7 @@ main {
 
 .balloonLeft {
   cursor: pointer;
-  position: absolute;
-  left: 70px;
-  top: 150px;
-  -webkit-animation: shake-bottom 2s ease-in-out infinite both;
-          animation: shake-bottom 2s ease-in-out infinite both;
+  display: flex;
 }
 
 .roundShape {
@@ -293,9 +293,9 @@ main {
 
 .balloonString {
   position: relative;
-  top: -45vh;
+  top: -40vh;
   left: 53px;
-  height: 45vh;
+  height: 40vh;
   background-color: black;
   width: 2px;
   transform: rotate(0deg);
@@ -304,7 +304,6 @@ main {
 
 .heartBalloon {
   cursor: pointer;
-  position: absolute;
   -webkit-animation: enlarge 2s ease-in-out infinite;
   animation: enlarge 2s ease-in-out infinite;
 }
@@ -331,8 +330,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
 }
+
 .daisyPetals {
   display: flex;
   flex-direction: column;
@@ -722,8 +721,8 @@ main {
             transform-origin: 0% 100%;
   }
   50% {
-    -webkit-transform: rotate(calc(var(--initial-rotation) + 6deg)) scale(var(--initial-scale)) translateY(15px);
-            transform: rotate(calc(var(--initial-rotation) + 6deg)) scale(var(--initial-scale)) translateY(15px);
+    -webkit-transform: rotate(calc(var(--initial-rotation) + 3deg)) scale(var(--initial-scale)) translateY(5px) translateX(-20px);
+            transform: rotate(calc(var(--initial-rotation) + 3deg)) scale(var(--initial-scale)) translateY(5px) translateX(-20px);
   }
 }
 
@@ -735,8 +734,8 @@ main {
             transform-origin: 0% 100%;
   }
   50% {
-    -webkit-transform: rotate(calc(var(--initial-rotation) + 3deg)) scale(var(--initial-scale)) translateY(10px);
-            transform: rotate(calc(var(--initial-rotation) + 3deg)) scale(var(--initial-scale)) translateY(10px);
+    -webkit-transform: rotate(calc(var(--initial-rotation) + 3deg)) scale(var(--initial-scale)) translateY(5px) translateX(-20px);
+            transform: rotate(calc(var(--initial-rotation) + 3deg)) scale(var(--initial-scale)) translateY(5px) translateX(-20px);
   }
 }
 
@@ -918,5 +917,30 @@ main {
   50% {
     -webkit-transform: rotate(calc(var(--initial-rotation) + 18deg)) scale(var(--initial-scale)) translateX(-15px);
             transform: rotate(calc(var(--initial-rotation) + 18deg)) scale(var(--initial-scale)) translateX(-15px);
+  }
+}
+@-webkit-keyframes shake-bottom-noTip-right {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+            transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) + 18deg)) scale(var(--initial-scale)) translateX(25px) translateY(5px);
+            transform: rotate(calc(var(--initial-rotation) + 18deg)) scale(var(--initial-scale)) translateX(25px) translateY(5px);
+  }
+}
+
+@keyframes shake-bottom-noTip-right {
+  0%, 100% {
+    -webkit-transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+            transform: rotate(var(--initial-rotation)) scale(var(--initial-scale));
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+  }
+  50% {
+    -webkit-transform: rotate(calc(var(--initial-rotation) + 18deg)) scale(var(--initial-scale)) translateX(25px) translateY(5px);
+            transform: rotate(calc(var(--initial-rotation) + 18deg)) scale(var(--initial-scale)) translateX(25px) translateY(5px);
   }
 }

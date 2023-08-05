@@ -1,16 +1,16 @@
-function Balloon(props) {
+function BalloonString(props) {
   return (
     <div
       key={props.id}
       className="balloonLeft"
       style={{
         '--initial-rotation': props.rotate.toString() + 'deg',
-        top: props.top.toString() + 'vh',
-        left: props.left.toString() + 'vw',
         '--initial-scale': props.scale.toString(),
         animation: `${props.type} 2s ease-in-out infinite both`,
         WebkitAnimation: `${props.type} 2s ease-in-out infinite both`,
-        position: 'absolute',
+        marginBottom: props.bottom + 'px',
+        marginRight: props.right + 'px',
+        visibility: props.show ? 'visible' : 'hidden',
       }}
       onClick={() => props.onPop(props.id)}
     >
@@ -32,9 +32,10 @@ function Balloon(props) {
         }}
       >
         <div className="balloonTip" style={{ backgroundColor: props.color }} />
+        <div className="balloonString" />
       </div>
     </div>
   );
 }
 
-export default Balloon;
+export default BalloonString;

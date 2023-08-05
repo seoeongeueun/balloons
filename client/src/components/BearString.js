@@ -1,16 +1,16 @@
-function Bear(props) {
+function BearString(props) {
   return (
     <div
       key={props.id}
       className="bear"
       style={{
         '--initial-rotation': props.rotate.toString() + 'deg',
-        top: props.top.toString() + 'vh',
-        left: props.left.toString() + 'vw',
         '--initial-scale': props.scale.toString(),
         animation: `${props.type} 2s ease-in-out infinite both`,
         WebkitAnimation: `${props.type} 2s ease-in-out infinite both`,
-        position: 'absolute',
+        marginBottom: props.bottom + 'px',
+        marginRight: props.right + 'px',
+        visibility: props.show ? 'visible' : 'hidden',
       }}
       onClick={() => props.onPop(props.id)}
     >
@@ -43,9 +43,10 @@ function Bear(props) {
           <div className="mouthOpen" />
         </div>
         <div className="bearTip" />
+        <div className="bearString" />
       </div>
     </div>
   );
 }
 
-export default Bear;
+export default BearString;

@@ -1,16 +1,16 @@
-function Daisy(props) {
+function DaisyString(props) {
   return (
     <div
       className="daisy"
       key={props.id}
       style={{
         '--initial-rotation': props.rotate.toString() + 'deg',
-        top: props.top.toString() + 'vh',
-        left: props.left.toString() + 'vw',
         '--initial-scale': props.scale.toString(),
         animation: `${props.type} 2s ease-in-out infinite both`,
         WebkitAnimation: `${props.type} 2s ease-in-out infinite both`,
-        position: 'absolute',
+        marginBottom: props.bottom + 'px',
+        marginRight: props.right + 'px',
+        visibility: props.show ? 'visible' : 'hidden',
       }}
       onClick={() => props.onPop(props.id)}
     >
@@ -42,8 +42,9 @@ function Daisy(props) {
         </div>
       </div>
       <div className="daisyTip" />
+      <div className="daisyString" />
     </div>
   );
 }
 
-export default Daisy;
+export default DaisyString;

@@ -1,11 +1,13 @@
 import Flag from './images/flag.png';
 import Mansion from './components/Mansion';
 import BalloonsContainer from './containers/BalloonsContainer';
+import CenterBalloonsContainer from './containers/CenterBalloonsContainer';
 
 function App() {
   return (
     <main>
       <BalloonsContainer />
+      <CenterBalloonsContainer />
       <Mansion />
       <img src={Flag} alt="flag" className="flag" />
       <div
