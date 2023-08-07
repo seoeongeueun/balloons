@@ -9,6 +9,7 @@ function BalloonsContainer() {
   const positions = useSelector((state) => state.positions);
   const dispatch = useDispatch();
   const onPop = (id) => dispatch(popBalloon(id));
+  const mode = useSelector((state) => state.modes);
 
   return (
     <div className="balloonsContainer">
@@ -25,6 +26,7 @@ function BalloonsContainer() {
               scale={balloon.scale}
               rotate={balloon.rotate}
               type={balloon.type}
+              mode={mode}
               onPop={onPop}
             />
           ) : balloon.show && balloon.shape === 'bear' ? (
@@ -36,6 +38,7 @@ function BalloonsContainer() {
               scale={balloon.scale}
               rotate={balloon.rotate}
               type={balloon.type}
+              mode={mode}
               onPop={onPop}
             />
           ) : balloon.show && balloon.shape === 'daisy' ? (
@@ -47,6 +50,7 @@ function BalloonsContainer() {
               scale={balloon.scale}
               rotate={balloon.rotate}
               type={balloon.type}
+              mode={mode}
               onPop={onPop}
             />
           ) : (
@@ -61,6 +65,7 @@ function BalloonsContainer() {
                 scale={balloon.scale}
                 rotate={balloon.rotate}
                 type={balloon.type}
+                mode={mode}
                 onPop={onPop}
               />
             )

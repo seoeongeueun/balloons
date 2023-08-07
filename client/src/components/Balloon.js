@@ -1,17 +1,23 @@
 import audioControls from '../modules/audioControls';
-
 function Balloon(props) {
   return (
     <div
-      key={props.id}
+      key={props.mode}
       className="balloonLeft"
       style={{
         '--initial-rotation': props.rotate.toString() + 'deg',
         top: props.top.toString() + 'vh',
         left: props.left.toString() + 'vw',
         '--initial-scale': props.scale.toString(),
-        animation: `${props.type} 2s ease-in-out infinite both`,
-        WebkitAnimation: `${props.type} 2s ease-in-out infinite both`,
+        '--move-up': props.mode === 'fly' ? '100vh' : '0',
+        animation:
+          props.mode === 'fly'
+            ? `${props.type} 4s ease-in-out 1 both`
+            : `${props.type} 2s ease-in-out infinite both`,
+        WebkitAnimation:
+          props.mode === 'fly'
+            ? `${props.type} 4s ease-in-out 1 both`
+            : `${props.type} 2s ease-in-out infinite both`,
         position: 'absolute',
       }}
       onClick={() => {

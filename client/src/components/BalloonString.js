@@ -8,6 +8,7 @@ function BalloonString(props) {
       style={{
         '--initial-rotation': props.rotate.toString() + 'deg',
         '--initial-scale': props.scale.toString(),
+        '--move-up': '0',
         animation: `${props.type} 2s ease-in-out infinite both`,
         WebkitAnimation: `${props.type} 2s ease-in-out infinite both`,
         marginBottom: props.bottom + 'px',

@@ -3,15 +3,22 @@ import audioControls from '../modules/audioControls';
 function Heart(props) {
   return (
     <div
-      key={props.id}
+      key={props.mode}
       className="heartContainer"
       style={{
         '--initial-scale': props.scale.toString(),
         top: props.top.toString() + 'vh',
         left: props.left.toString() + 'vw',
         '--initial-rotation': props.rotate.toString() + 'deg',
-        animation: `${props.type} 2s ease-in-out infinite both`,
-        WebkitAnimation: `${props.type} 2s ease-in-out infinite both`,
+        '--move-up': props.mode === 'fly' ? '-100vh' : '0',
+        animation:
+          props.mode === 'fly'
+            ? `${props.type} 4s ease-in-out 1 both`
+            : `${props.type} 2s ease-in-out infinite both`,
+        WebkitAnimation:
+          props.mode === 'fly'
+            ? `${props.type} 4s ease-in-out 1 both`
+            : `${props.type} 2s ease-in-out infinite both`,
         zIndex: props.id === 3 && '5',
         position: 'absolute',
       }}

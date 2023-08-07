@@ -2,10 +2,26 @@ import Flag from './images/flag.png';
 import Mansion from './components/Mansion';
 import BalloonsContainer from './containers/BalloonsContainer';
 import CenterBalloonsContainer from './containers/CenterBalloonsContainer';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleFlyMode } from './modules/modes.js';
+import { useEffect } from 'react';
 
 function App() {
+  const dispatch = useDispatch();
+  const onFly = () => dispatch(toggleFlyMode());
+  const mode = useSelector((state) => state.modes);
+
+  useEffect(() => {
+    console.log(mode);
+  }, [mode]);
+
   return (
     <main>
+      <div className="buttons">
+        <button onClick={() => onFly()}>
+          {mode === 'default' ? '날리기' : '돌아와!'}
+        </button>
+      </div>
       <BalloonsContainer />
       <CenterBalloonsContainer />
       <Mansion />
