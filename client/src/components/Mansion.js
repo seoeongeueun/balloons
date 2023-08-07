@@ -2,9 +2,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addBalloon, popBalloon } from '../modules/positions';
 import MansionImg from '../images/mansion.png';
 import audioControls from '../modules/audioControls.js';
+import Dark from '../images/dark.png';
 
 function Mansion() {
   const positions = useSelector((state) => state.positions);
+  const time = useSelector((state) => state.time);
   const dispatch = useDispatch();
   const onPop = (id) => dispatch(popBalloon(id));
   const onAdd = () => {
@@ -75,7 +77,7 @@ function Mansion() {
   return (
     <div className="mansionContainer">
       <img
-        src={MansionImg}
+        src={time === 'day' ? MansionImg : Dark}
         alt="mansion"
         className="mansion"
         onClick={() => onAdd()}
