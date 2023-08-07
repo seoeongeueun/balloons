@@ -132,7 +132,7 @@ npm start
 1. 날리기 모드<br><br>
    ![Fly](./client/src/images/fly.gif)<br>
 
-클릭시 현재 모드를 default에서 fly로 설정해 끈이 없는 모든 풍선을 날려보냅니다. 이동할 Y 값은 style property로 기본은 0이며 mode가 fly일시 값을 지정해서 애니메이션에서 적용합니다.<br>
+클릭시 현재 모드를 default에서 fly로 설정해 끈이 없는 모든 풍선을 날려보냅니다. 이동할 Y 값은 style property로 기본은 0이며 mode가 fly일 시 값을 지정해서 애니메이션에서 적용합니다.<br>
 
 ```style={{
         ...
@@ -218,9 +218,7 @@ Redux에서 현재 time을 night으로 설정하고 main div에 불투명한 검
 두 가지 모양 다 css로 만든 뒤 애니메이션을 적용했습니다. 다양한 rotate 값을 적용해 움직임과 멀어짐 표현을 좀 더 디테일하게 만들었습니다<br>
 
 ```
-    ...
     transform: rotate(55deg) rotateY(45deg) rotateX(-10deg) scale(4);
-    ...
 ```
 
 #### 효과음 출처
