@@ -25,6 +25,13 @@ function App() {
       <BalloonsContainer />
       <CenterBalloonsContainer />
       <Mansion />
+      <div className="paperPlane">
+        <div className="triangle1">
+          <div className="triangle2">
+            <div className="triangle"></div>
+          </div>
+        </div>
+      </div>
       <img src={Flag} alt="flag" className="flag" />
       <div className="rainbowContainer">
         <div className="redRing" />

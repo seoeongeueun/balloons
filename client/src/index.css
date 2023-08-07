@@ -627,6 +627,60 @@ main {
   z-index: -2;
 }
 
+.paperPlane {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #DAFAFF;
+  position: relative;
+  /* transform: rotate(65deg) rotateY(-15deg) rotateX(-10deg) scale(-4); */
+  /* transform: rotate(55deg) rotateY(45deg) rotateX(-10deg) scale(4); */
+  border-radius: 3px;
+  position: absolute;
+  z-index: 2;
+  top: 80vh;
+  left: -10vw;
+  animation: plane-fly 13s ease-in infinite both;
+  -webkit-animation: plane-fly 13s ease-in infinite both;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 60px solid #BDD6DA; /* White color to represent paper */
+  position: relative;
+  transform: rotate(-175deg) rotateY(-60deg) rotateX(10deg) scale(0.83);
+  top: 2px;
+  left: -7px;
+}
+
+.triangle1 {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid #BDD6DA; /* White color to represent paper */
+  position: relative;
+  transform: rotate(-70deg) scale(1.3) rotateY(-45deg);
+  top: 37px;
+  left: -6px;
+}
+
+.triangle2 {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid #95C6CF; /* White color to represent paper */
+  position: relative;
+  transform: rotate(-110deg) scale(0.9) rotateY(-45deg);
+  top: 4px;
+  left: -5.3px;
+}
+
 /* list of animations */
 @-webkit-keyframes shake-bottom-less {
   0% {
@@ -1204,5 +1258,41 @@ main {
             transform: rotate(var(--initial-rotation)) scale(var(--initial-scale)) translateY(var(--move-up));
     -webkit-transform-origin: 50% 0%;
             transform-origin: 50% 0%;
+  }
+}
+
+@keyframes plane-fly {
+  0% {
+    transform: translate(-100vw, 20vh) rotate(55deg) rotateY(45deg) rotateX(-10deg) scale(4);
+  }
+  5% {
+    transform: translate(0vw, 5vh) rotate(5deg) rotateY(35deg) rotateX(5deg) scale(2);
+  }
+  25% {
+    transform: translate(50vw, -30vh) rotate(55deg) rotateY(35deg) rotateX(5deg) scale(3);
+  }
+  50% {
+    transform: translate(110vw, -60vh) rotate(30deg) rotateY(25deg) rotateX(10deg) scale(1);
+  }
+  60% {
+    transform: translate(150vw, -60vh) rotate(65deg) rotateY(-15deg) rotateX(-10deg) scale(-1);
+  }
+  95% {
+    transform: translate(9vw, -10vh) rotate(60deg) rotateY(5deg) rotateX(-10deg) scale(-2);
+  }
+}
+
+@-webkit-keyframes plane-fly {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(100vw) translateY(2vh);
+  }
+  50.1% {
+    transform: scale(1, -1) translateX(100vw) translateY(-2vh);
+  }
+  100% {
+    transform: scale(1, 1) translateX(-100vw) translateY(-2vh);
   }
 }

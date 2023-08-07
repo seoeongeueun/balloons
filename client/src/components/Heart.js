@@ -10,14 +10,14 @@ function Heart(props) {
         top: props.top.toString() + 'vh',
         left: props.left.toString() + 'vw',
         '--initial-rotation': props.rotate.toString() + 'deg',
-        '--move-up': props.mode === 'fly' ? '-100vh' : '0',
+        '--move-up': props.mode === 'fly' ? '-210vh' : '0',
         animation:
           props.mode === 'fly'
-            ? `${props.type} 4s ease-in-out 1 both`
+            ? `${props.type} 5s ease-in-out 1 both`
             : `${props.type} 2s ease-in-out infinite both`,
         WebkitAnimation:
           props.mode === 'fly'
-            ? `${props.type} 4s ease-in-out 1 both`
+            ? `${props.type} 5s ease-in-out 1 both`
             : `${props.type} 2s ease-in-out infinite both`,
         zIndex: props.id === 3 && '5',
         position: 'absolute',
