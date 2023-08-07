@@ -1,4 +1,4 @@
-# balloons
+# Balloons
 
 ![sample](./client/src/images/main.gif)
 
@@ -105,6 +105,7 @@ npm start
 
 2. 아직 터트린 풍선이 없을 때<br><br>
    새로운 풍선을 생성하는 generateBalloon() 함수를 실행합니다.<br>
+   기본으로 화면에 나타나는 풍선 갯수는 81개이며 positions.length < 111 조건을 달아 생성할 수 있는 풍선 갯수에 제한을 두었습니다.
    Math.random 함수를 활용해서 색깔, 기울어진 각도, 모양, 위치를 랜덤으로 지정합니다.<br>
    통일감을 주기 위해 각 모양마다 확률을 적용해 새로 생성된 풍선은 둥근 기본 모양일 확률이 50%로 가장 높게 설정했습니다.<br>
 
