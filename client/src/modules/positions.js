@@ -40,7 +40,7 @@ const initialState = [
     id: 3,
     top: 58,
     left: 69,
-    scale: 3,
+    scale: 2.7,
     rotate: 33,
     color: '#F31C12',
     shape: 'heart',

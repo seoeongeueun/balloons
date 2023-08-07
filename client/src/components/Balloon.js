@@ -9,7 +9,7 @@ function Balloon(props) {
         top: props.top.toString() + 'vh',
         left: props.left.toString() + 'vw',
         '--initial-scale': props.scale.toString(),
-        '--move-up': props.mode === 'fly' ? '210vh' : '0',
+        '--move-up': props.mode === 'fly' ? '220vh' : '0',
         animation:
           props.mode === 'fly'
             ? `${props.type} 5s ease-in-out 1 both`

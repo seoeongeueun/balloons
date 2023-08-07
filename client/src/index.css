@@ -527,9 +527,9 @@ html {
 
 .balloonString {
   position: relative;
-  top: -40vh;
+  top: -45vh;
   left: 53px;
-  height: 40vh;
+  height: 45vh;
   background-color: black;
   width: 2px;
   transform: rotate(0deg);
