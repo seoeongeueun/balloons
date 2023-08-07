@@ -191,7 +191,7 @@ https://seongeun-balloons.netlify.app/
           ...
 ```
 
-Redux에서 현재 time을 night으로 설정하고 main div에 불투명한 검정 색을 적용해서 화면을 어둡게 합니다. pointer-events: none을 설정해 풍선 클릭을 방해하지 않게 만들었습니다.<br>
+Time reducer를 통해 현재 time을 night으로 설정하고 main div에 불투명한 검정 색을 적용해서 화면을 어둡게 합니다. pointer-events: none을 설정해 풍선 클릭을 방해하지 않게 만들었습니다.<br>
 
 ```
     const handleNightTime = () => {
