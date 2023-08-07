@@ -9,6 +9,7 @@
     <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=white">
     <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
     <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+    <img src="https://img.shields.io/badge/netlify-00C7B7?style=for-the-badge&logo=Netlify&logoColor=white">
  </div>
  <br>
 
@@ -22,6 +23,9 @@ npm install
 npm start
 ```
 로 실행할 수 있습니다.<br>
+
+**배포 URL**<br>
+https://seongeun-balloons.netlify.app/
 
 ## Table of Contents 
 [1. Task 1](#task-1)  
