@@ -34,8 +34,15 @@ function App() {
         <button onClick={() => onFly()}>
           {mode === 'default' ? '날리기' : '돌아와!'}
         </button>
-        <button onClick={() => handleNightTime()}>
-          {mode === 'day' ? '밤' : '낮'}
+        <button
+          onClick={() => handleNightTime()}
+          style={{
+            backgroundColor: time === 'day' ? '#122254' : '#FFBB11',
+            color: 'white',
+            borderColor: time === 'day' ? '#122254' : '#FFBB11',
+          }}
+        >
+          {time === 'day' ? '밤' : '낮'}
         </button>
       </div>
       <BalloonsContainer />
@@ -325,7 +332,7 @@ function App() {
           </div>
         </>
       ) : (
-        <div className="stars">
+        <div className="nightSky">
           {Array.from({ length: 40 }, (_, index) => (
             <div
               key={index}
@@ -341,6 +348,15 @@ function App() {
               }}
             />
           ))}
+          <div className="ufoContainer">
+            <div className="ufoLight" />
+            <div className="ufoBottom" />
+            <div className="ufoTop" />
+            <div className="ufoCircles">
+              <div className="ufoCircle" style={{ marginTop: '2px' }} />
+              <div className="ufoCircle" />
+            </div>
+          </div>
         </div>
       )}
     </div>
