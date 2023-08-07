@@ -169,7 +169,7 @@ https://seongeun-balloons.netlify.app/
 2. 밤/낮 모드<br><br>
    ![Night](./client/src/images/night.gif)<br>
 
-밤 버튼 클릭시 전체 화면을 어둡게 만들고, 화면 색깔을 바꾸고, 구름 대신 별을 생성합니다. 별은 총 40개를 생성하고 Math.random 함수를 사용해서 매번 랜덤한 위치, 크기, 각도를 갖게 만들었습니다.<br>
+밤 버튼 클릭시 전체 화면을 어둡게 만들고, 하늘 색깔을 바꾸고, 구름 대신 별을 생성합니다. 별은 총 40개를 생성하고 Math.random 함수를 사용해서 매번 랜덤한 위치, 크기, 각도를 갖게 만들었습니다.<br>
 
 ```
     <div className="nightSky">
